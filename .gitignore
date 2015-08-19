@@ -2,8 +2,6 @@
 *.log
 *.thunder
 *.exvim
-*.tif
-*.png
 *.pyc
 /dist/
 /build/
