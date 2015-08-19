@@ -1,0 +1,10 @@
+!requirements.txt
+*.log
+*.thunder
+*.exvim
+*.tif
+*.png
+*.pyc
+/dist/
+/build/
+/MEHI.egg-info/
