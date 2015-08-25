@@ -4,8 +4,8 @@
 # FileName : test_p_segmentation.py
 ################################
 
-from MEHI.segmentation.segmentation import *
-from MEHI import ThunderContext
+from lambdaimage.segmentation.segmentation import *
+from lambdaimage import ThunderContext
 from test_utils import PySparkTestCase
 import numpy as np
 from nose.tools import assert_equals

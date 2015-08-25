@@ -1,7 +1,7 @@
 import shutil
 import tempfile
 from numpy import array, allclose, corrcoef
-from MEHI.rdds.timeseries import TimeSeries
+from lambdaimage.rdds.timeseries import TimeSeries
 from test_utils import PySparkTestCase
 from nose.tools import assert_equals
 

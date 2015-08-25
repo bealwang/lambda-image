@@ -4,7 +4,7 @@
 # FileName : test_IO.py
 ################################
 
-from MEHI.serial.IO import *
+from lambdaimage.serial.IO import *
 from test_utils import LocalTestCase
 import os
 import numpy as np

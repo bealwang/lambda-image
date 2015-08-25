@@ -4,8 +4,8 @@
 # FileName : test_segmentation.py
 ################################
 
-from MEHI.serial.segmentation import *
-from MEHI.serial.IO import load_tiff
+from lambdaimage.serial.segmentation import *
+from lambdaimage.serial.IO import load_tiff
 from test_utils import LocalTestCase
 import numpy as np
 from nose.tools import assert_equals

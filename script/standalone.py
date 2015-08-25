@@ -1,20 +1,20 @@
-################################
+###############################
 # Author   : septicmk
 # Date     : 2015/07/25 16:14:09
 # FileName : main.py
 ################################
 
-from MEHI import preprocess as prep
-from MEHI import registration as reg
-from MEHI import fusion as fus
+from lambdaimage import preprocess as prep
+from lambdaimage import registration as reg
+from lambdaimage import fusion as fus
 from pyspark import SparkContext, SparkConf
-from MEHI import ThunderContext
-from MEHI.utils.tool import exeTime, log, showsize
+from lambdaimage import ThunderContext
+from lambdaimage.utils.tool import exeTime, log, showsize
 import numpy as np
 
 #conf = SparkConf().setAppName('test').setMaster('local[1]').set('spark.executor.memory','2g').set('spark.driver.maxResultSize','6g').set('spark.driver.memory','8g').set('spark.local.dir','/dev/shm').set('spark.storage.memoryFraction','0.2').set('spark.default.parallelism','10')
 #tsc=ThunderContext.start(conf=conf)
-tsc = ThunderContext.start(master="spark://blade12:7077",appName="MEHI")
+tsc = ThunderContext.start(master="spark://blade12:7077",appName="lambdaimage")
 log('info')('tiff load start...')
 rddA = tsc.loadImages('/home/wb/data/1-L/*.tif', inputFormat='tif-stack')
 rddB = tsc.loadImages('/home/wb/data/1-R/*.tif', inputFormat='tif-stack')
@@ -45,7 +45,7 @@ fused_img = tsc.loadImagesFromArray(fused_img)
 log('info')('fusion over ...')
 
 log('info')('saving ...')
-fused_img.exportAsTiffs('/home/wb/data/thunder/fusion',overwrite = True)
+fused_img.exportAsTiffs('/home/wb/data/lambdaimage/fusion',overwrite = True)
 #fused_img = np.squeeze(np.array(fused_img.values().collect()))
 
 log('info')('subtract background start ...')
@@ -53,4 +53,4 @@ sb_img = prep.subtract_Background(fused_img)
 log('info')('sbutract background over ... ')
 
 log('info')('saving ...')
-sb_img.exportAsTiffs('/home/wb/data/thunder/subtract',overwrite = True)
+sb_img.exportAsTiffs('/home/wb/data/lambdaimage/subtract',overwrite = True)

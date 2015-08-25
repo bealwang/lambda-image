@@ -3,16 +3,16 @@
 # Date     : 2015/07/24 09:37:15
 # FileName : setup.py
 ################################
-NAME="MEHI"
-DESCRIPTION = "Image processing pipeline for MEHI"
+NAME="lambdaimage"
+DESCRIPTION = "Image processing pipeline for lambdaimage"
 LONG_DESCRIPTION = ''
 MAINTAINER = 'septicmk'
 MAINTAINER_EMAIL = 'mengke@ncic.ac.cn'
-URL = 'https://github.com/septicmk/MEHI'
+URL = 'https://github.com/septicmk/lambdaimage'
 LICENSE = 'BSD'
-DOWNLOAR_URL = 'https://github.com/septicmk/MEHI'
+DOWNLOAR_URL = 'https://github.com/septicmk/lambdaimage'
 
-with open('MEHI/__init__.py') as f:
+with open('lambdaimage/__init__.py') as f:
     for line in f:
         if line.startswith('__version__'):
             VERSION = line.strip().split()[-1][1:-1]
@@ -27,18 +27,18 @@ if __name__ == '__main__':
     from setuptools.command.build_ext import build_ext
     import numpy
     extensions =[
-        Extension("MEHI.udf._subtract_bg",
-            sources=["MEHI/udf/_subtract_bg.pyx","MEHI/udf/_subtract_bg_c.cpp"],
+        Extension("lambdaimage.udf._subtract_bg",
+            sources=["lambdaimage/udf/_subtract_bg.pyx","lambdaimage/udf/_subtract_bg_c.cpp"],
             inlcude_dirs=[numpy.get_include()],
             language="c++"),
-        Extension("MEHI.udf._trans",
-            sources=["MEHI/udf/_trans.pyx","MEHI/udf/_trans_c.c"],
+        Extension("lambdaimage.udf._trans",
+            sources=["lambdaimage/udf/_trans.pyx","lambdaimage/udf/_trans_c.c"],
             include_dirs=[numpy.get_include()]),
-        Extension("MEHI.udf._update",
-            sources=["MEHI/udf/_update.pyx", "MEHI/udf/_update_c.c"],
+        Extension("lambdaimage.udf._update",
+            sources=["lambdaimage/udf/_update.pyx", "lambdaimage/udf/_update_c.c"],
             include_dirs=[numpy.get_include()]),
-        Extension("MEHI.udf._moment",
-            sources=["MEHI/udf/_moment.pyx"],
+        Extension("lambdaimage.udf._moment",
+            sources=["lambdaimage/udf/_moment.pyx"],
             inlcude_dirs=[numpy.get_include()]),
     ]
     from Cython.Build import cythonize

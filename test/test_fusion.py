@@ -4,8 +4,8 @@
 # FileName : test_fusion.py
 ################################
 
-from MEHI.serial.fusion import *
-from MEHI.serial.IO import load_tiff
+from lambdaimage.serial.fusion import *
+from lambdaimage.serial.IO import load_tiff
 from test_utils import LocalTestCase
 import numpy as np
 import os,sys

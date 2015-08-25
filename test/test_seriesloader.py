@@ -8,8 +8,8 @@ from nose.tools import assert_almost_equal, assert_equals, assert_true, assert_r
 from numpy import allclose, arange, array, array_equal
 from numpy import dtype as dtypeFunc
 
-from MEHI.rdds.fileio.seriesloader import SeriesLoader
-from MEHI.utils.common import smallestFloatType
+from lambdaimage.rdds.fileio.seriesloader import SeriesLoader
+from lambdaimage.utils.common import smallestFloatType
 from test_utils import PySparkTestCase, PySparkTestCaseWithOutputDir
 
 _have_image = False
@@ -135,7 +135,7 @@ class TestSeriesLoader(PySparkTestCase):
     @staticmethod
     def _findSourceTreeDir(dirName="utils/data"):
         testDirPath = os.path.dirname(os.path.realpath(__file__))
-        testResourcesDirPath = os.path.join(testDirPath, "..", "MEHI", dirName)
+        testResourcesDirPath = os.path.join(testDirPath, "..", "lambdaimage", dirName)
         if not os.path.isdir(testResourcesDirPath):
             raise IOError("Directory "+testResourcesDirPath+" not found")
         return testResourcesDirPath

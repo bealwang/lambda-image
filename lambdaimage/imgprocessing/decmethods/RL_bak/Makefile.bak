@@ -1,0 +1,29 @@
+BIN	:= libdeconv.so
+
+C_SOURCES := deconv.c Image.cpp Signal.cpp ToolboxFourier.cpp ToolboxSignal.cpp RichardsonLucy.cpp rlmain.cpp
+
+C_OBJS := $(patsubst %.cpp, %.o, $(C_SOURCES))
+
+$(BIN): $(C_OBJS)
+	gcc  -fPIC -shared -Wl,-soname,libdeconv.so -o $(BIN) $(C_OBJS) -L../tiff -ltiff -L/home/jph/opt/fftw/ -lfftw3f -lpthread -lfftw3_threads -lm
+	cp libdeconv.so ..
+
+
+deconv.o: deconv.c
+	gcc -fPIC -c -o deconv.o
+Image.o: Image.cpp image.h
+	g++ -fPIC -c Image.cpp 
+Signal.o: Signal.cpp Signal.h
+	g++ -fPIC -c Signal.cpp 
+ToolboxSignal.o: ToolboxSignal.cpp ToolboxSignal.h
+	g++ -fPIC -c ToolboxSignal.cpp 
+ToolboxFourier.o: ToolboxFourier.cpp ToolboxFourier.h
+	g++ -fPIC -c ToolboxFourier.cpp 
+RichardsonLucy.o: RichardsonLucy.cpp RichardsonLucy.h
+	g++ -fPIC -c RichardsonLucy.cpp 
+
+rlmain.o: rlmain.cpp image.h Signal.h ToolboxFourier.h ToolboxSignal.h RichardsonLucy.h
+	g++  -fPIC -O2 -c rlmain.cpp
+
+clean:
+	rm -f $(BIN) *.o 

@@ -4,8 +4,8 @@
 # FileName : test_p_preprocess.py
 ################################
 
-from MEHI.preprocess.preprocess import *
-from MEHI import ThunderContext
+from lambdaimage.preprocess.preprocess import *
+from lambdaimage import ThunderContext
 from test_utils import PySparkTestCase
 import numpy as np
 import os

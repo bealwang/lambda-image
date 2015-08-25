@@ -1,7 +1,7 @@
 import shutil
 import tempfile
 from numpy import array, array_equal, add
-from MEHI.rdds.matrices import RowMatrix
+from lambdaimage.rdds.matrices import RowMatrix
 from test_utils import PySparkTestCase
 
 

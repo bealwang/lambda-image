@@ -1,8 +1,11 @@
 !requirements.txt
 *.log
-*.thunder
+.exvim.*
 *.exvim
 *.pyc
+*.png
+*.jpg
+*.tif
 /dist/
 /build/
-/MEHI.egg-info/
+/lambdaimage.egg-info/

@@ -2,7 +2,7 @@ from numpy import ones
 
 from test_utils import PySparkTestCase
 
-from MEHI.rdds.fileio.imagesloader import ImagesLoader
+from lambdaimage.rdds.fileio.imagesloader import ImagesLoader
 
 
 class TestBlockKeys(PySparkTestCase):

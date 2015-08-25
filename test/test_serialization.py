@@ -2,7 +2,7 @@ import json
 from nose.tools import assert_equal, assert_false, assert_raises, assert_true
 import unittest
 
-from MEHI.utils.serializable import Serializable, _decode_dict
+from lambdaimage.utils.serializable import Serializable, _decode_dict
 
 
 class Foo(Serializable):

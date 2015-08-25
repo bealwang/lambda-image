@@ -3,14 +3,14 @@ from numpy import dtype as dtypeFunc
 from numpy.testing import assert_array_equal, assert_equal
 from nose.tools import assert_equals, assert_is_none, assert_is_not_none, assert_raises, assert_true
 
-from MEHI.rdds.series import Series
+from lambdaimage.rdds.series import Series
 from test_utils import *
 
 
 class TestSeriesConversions(PySparkTestCase):
 
     def test_toRowMatrix(self):
-        from MEHI.rdds.matrices import RowMatrix
+        from lambdaimage.rdds.matrices import RowMatrix
         rdd = self.sc.parallelize([(0, array([4, 5, 6, 7])), (1, array([8, 9, 10, 11]))])
         data = Series(rdd)
         mat = data.toRowMatrix()
@@ -24,14 +24,14 @@ class TestSeriesConversions(PySparkTestCase):
         assert(array_equal(out, array([[5, 6, 7, 8], [9, 10, 11, 12]])))
 
     def test_toTimeSeries(self):
-        from MEHI.rdds.timeseries import TimeSeries
+        from lambdaimage.rdds.timeseries import TimeSeries
         rdd = self.sc.parallelize([(0, array([4, 5, 6, 7])), (1, array([8, 9, 10, 11]))])
         data = Series(rdd)
         ts = data.toTimeSeries()
         assert(isinstance(ts, TimeSeries))
 
     def test_toImages(self):
-        from MEHI.rdds.images import Images
+        from lambdaimage.rdds.images import Images
         rdd = self.sc.parallelize([((0, 0), array([1])), ((0, 1), array([2])),
                                    ((1, 0), array([3])), ((1, 1), array([4]))])
         data = Series(rdd)
@@ -47,7 +47,7 @@ class TestSeriesConversions(PySparkTestCase):
         size = 3*2*2
         ary = arange(size, dtype=dtypeFunc('uint8')).reshape(shape)
         ary2 = ary + size
-        from MEHI.rdds.fileio.seriesloader import SeriesLoader
+        from lambdaimage.rdds.fileio.seriesloader import SeriesLoader
         series = SeriesLoader(self.sc).fromArraysAsImages([ary, ary2])
 
         castSeries = series.astype("smallfloat")
@@ -58,7 +58,7 @@ class TestSeriesConversions(PySparkTestCase):
 
 class TestSeriesDataStatsMethods(PySparkTestCase):
     def generateTestSeries(self):
-        from MEHI.rdds.fileio.seriesloader import SeriesLoader
+        from lambdaimage.rdds.fileio.seriesloader import SeriesLoader
         ary1 = arange(8, dtype=dtypeFunc('uint8')).reshape((2, 4))
         ary2 = arange(8, 16, dtype=dtypeFunc('uint8')).reshape((2, 4))
         return SeriesLoader(self.sc).fromArraysAsImages([ary1, ary2])
@@ -256,7 +256,7 @@ class TestSeriesMethods(PySparkTestCase):
         assert_equals(data.dtype, values[0, :].dtype)
 
     def test_maxProject(self):
-        from MEHI.rdds.fileio.seriesloader import SeriesLoader
+        from lambdaimage.rdds.fileio.seriesloader import SeriesLoader
         ary = arange(8, dtype=dtypeFunc('int16')).reshape((2, 4))
 
         series = SeriesLoader(self.sc).fromArraysAsImages(ary)

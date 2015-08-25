@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from nose.tools import assert_equal, assert_raises
 
-from MEHI.rdds.fileio.readers import LocalFSFileReader, LocalFSParallelReader, FileNotFoundError
+from lambdaimage.rdds.fileio.readers import LocalFSFileReader, LocalFSParallelReader, FileNotFoundError
 
 
 def touch_empty(filepath):

@@ -4,7 +4,7 @@ from numpy import arange, array_equal, expand_dims, isclose
 
 from test_utils import LocalTestCase
 
-from MEHI.rdds.imgblocks.strategy import PaddedBlockingStrategy, SimpleBlockingStrategy
+from lambdaimage.rdds.imgblocks.strategy import PaddedBlockingStrategy, SimpleBlockingStrategy
 
 MockImage = namedtuple("MockImage", "dims nrecords dtype")
 

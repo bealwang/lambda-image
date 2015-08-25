@@ -4,8 +4,8 @@
 # FileName : test_p_fusion.py
 ################################
 
-from MEHI.fusion.fusion import *
-from MEHI import ThunderContext
+from lambdaimage.fusion.fusion import *
+from lambdaimage import ThunderContext
 from test_utils import PySparkTestCase
 import numpy as np
 import os

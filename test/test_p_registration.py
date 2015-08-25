@@ -4,9 +4,9 @@
 # FileName : test_p_registration.py
 ################################
 
-from MEHI.registration.registration import *
-from MEHI.serial.preprocess import flip
-from MEHI import ThunderContext
+from lambdaimage.registration.registration import *
+from lambdaimage.serial.preprocess import flip
+from lambdaimage import ThunderContext
 from test_utils import PySparkTestCase
 import numpy as np
 from nose.tools import assert_equals

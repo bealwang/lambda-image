@@ -5,7 +5,7 @@ import os
 import unittest
 from nose.tools import assert_almost_equal, assert_equals, assert_raises, assert_true
 
-from MEHI.rdds.fileio.imagesloader import ImagesLoader
+from lambdaimage.rdds.fileio.imagesloader import ImagesLoader
 from test_utils import PySparkTestCase, PySparkTestCaseWithOutputDir
 
 _haveImage = False

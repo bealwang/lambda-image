@@ -7,7 +7,7 @@ from numpy import arange, array, array_equal, mod
 from numpy import dtype as dtypeFunc
 
 from test_utils import PySparkTestCaseWithOutputDir
-from MEHI import ThunderContext
+from lambdaimage import ThunderContext
 
 _have_image = False
 try:
@@ -345,7 +345,7 @@ class TestLoadIrregularImages(PySparkTestCaseWithOutputDir):
         self.ary = arange(256, dtype=dtypeFunc(dtype)).reshape((16, 4, 4))  # 16 pages of 4x4 images
 
     def _write_tiffs(self):
-        import MEHI.rdds.fileio.tifffile as tifffile
+        import lambdaimage.rdds.fileio.tifffile as tifffile
         writer1 = tifffile.TiffWriter(os.path.join(self.outputdir, "tif01.tif"))
         writer1.save(self.ary[:8].transpose((0, 2, 1)), photometric="minisblack")  # write out 8 pages
         writer1.close()

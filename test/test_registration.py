@@ -4,9 +4,9 @@
 # FileName : test_registration.py
 ################################
 
-from MEHI.serial.registration import *
-from MEHI.serial.preprocess import flip
-from MEHI.serial.IO import load_tiff
+from lambdaimage.serial.registration import *
+from lambdaimage.serial.preprocess import flip
+from lambdaimage.serial.IO import load_tiff
 from test_utils import LocalTestCase
 import numpy as np
 from nose.tools import assert_equals

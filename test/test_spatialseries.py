@@ -1,6 +1,6 @@
 from numpy import array, allclose, mean, corrcoef
 from test_utils import PySparkTestCase
-from MEHI.rdds.spatialseries import SpatialSeries
+from lambdaimage.rdds.spatialseries import SpatialSeries
 
 
 class TestLocalCorr(PySparkTestCase):

@@ -7,12 +7,12 @@ import itertools
 from nose.tools import assert_equals, assert_raises, assert_true
 import unittest
 
-from MEHI.rdds.series import Series
-from MEHI.rdds.images import Images
-from MEHI.rdds.timeseries import TimeSeries
-from MEHI.rdds.fileio.imagesloader import ImagesLoader
-from MEHI.rdds.fileio.seriesloader import SeriesLoader
-from MEHI.rdds.imgblocks.strategy import PaddedBlockingStrategy, SimpleBlockingStrategy
+from lambdaimage.rdds.series import Series
+from lambdaimage.rdds.images import Images
+from lambdaimage.rdds.timeseries import TimeSeries
+from lambdaimage.rdds.fileio.imagesloader import ImagesLoader
+from lambdaimage.rdds.fileio.seriesloader import SeriesLoader
+from lambdaimage.rdds.imgblocks.strategy import PaddedBlockingStrategy, SimpleBlockingStrategy
 from test_utils import PySparkTestCase, PySparkTestCaseWithOutputDir
 
 _have_image = False
@@ -33,7 +33,7 @@ def _generateTestArrays(narys, dtype_='int16'):
 
 def findSourceTreeDir(dirname="utils/data"):
     testdirpath = os.path.dirname(os.path.realpath(__file__))
-    testresourcesdirpath = os.path.join(testdirpath, "..", "MEHI", dirname)
+    testresourcesdirpath = os.path.join(testdirpath, "..", "lambdaimage", dirname)
     if not os.path.isdir(testresourcesdirpath):
         raise IOError("Directory "+testresourcesdirpath+" not found")
     return testresourcesdirpath
@@ -394,19 +394,19 @@ class TestImagesMethods(PySparkTestCase):
 
     def test_gaussFilter3d(self):
         from scipy.ndimage.filters import gaussian_filter
-        from MEHI.rdds.images import Images
+        from lambdaimage.rdds.images import Images
         self._run_tst_filter(Images.gaussianFilter, gaussian_filter)
         self._run_tst_filter_3d_sigma(Images.gaussianFilter, gaussian_filter)
 
     def test_medianFilter3d(self):
         from scipy.ndimage.filters import median_filter
-        from MEHI.rdds.images import Images
+        from lambdaimage.rdds.images import Images
         self._run_tst_filter(Images.medianFilter, median_filter)
         self._run_tst_filter_3d_sigma(Images.medianFilter, median_filter)
 
     def test_uniformFilter3d(self):
         from scipy.ndimage.filters import uniform_filter
-        from MEHI.rdds.images import Images
+        from lambdaimage.rdds.images import Images
         self._run_tst_filter(Images.uniformFilter, uniform_filter)
         self._run_tst_filter_3d_sigma(Images.uniformFilter, uniform_filter)
 
@@ -736,7 +736,7 @@ class TestImagesUsingOutputDir(PySparkTestCaseWithOutputDir):
     @staticmethod
     def _findSourceTreeDir(dirname="utils/data"):
         testDirPath = os.path.dirname(os.path.realpath(__file__))
-        testResourcesDirPath = os.path.join(testDirPath, "..", "MEHI", dirname)
+        testResourcesDirPath = os.path.join(testDirPath, "..", "lambdaimage", dirname)
         if not os.path.isdir(testResourcesDirPath):
             raise IOError("Directory "+testResourcesDirPath+" not found")
         return testResourcesDirPath

@@ -4,8 +4,8 @@ import shutil
 import tempfile
 from numpy import array, allclose
 from test_utils import PySparkTestCase
-from MEHI.rdds.series import Series
-from MEHI.rdds.keys import _subToIndConverter, _indToSubConverter
+from lambdaimage.rdds.series import Series
+from lambdaimage.rdds.keys import _subToIndConverter, _indToSubConverter
 
 
 class SeriesKeysTestCase(PySparkTestCase):

@@ -1,4 +1,4 @@
-from MEHI.utils.params import Params
+from lambdaimage.utils.params import Params
 from nose.tools import assert_true
 from numpy import array, array_equal
 

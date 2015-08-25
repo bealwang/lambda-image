@@ -1,0 +1,136 @@
+#include <iostream>
+#include <getopt.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <float.h>
+#include <vector>
+#include <iomanip>
+#include "tiff.h"
+#include "tiffio.h"
+#include <stdlib.h>
+#include "image.h"
+#include "Signal.h"
+#include "ToolboxSignal.h"
+#include "RichardsonLucy.h"
+#include "ToolboxFourier.h"
+TIFF *image=NULL;
+using namespace std;
+static const char* optString="i:p:o:n:b:q:";
+static const struct option longOpts[]={
+    {"image", required_argument, NULL, 'i'},
+    {"psf", required_argument, NULL, 'p'},
+    {"output", required_argument, NULL, 'o'},
+    {"nIter", required_argument, NULL, 'n'},
+    {"blackground", required_argument, NULL, 'b'},
+};
+int main(int argc, char *argv[]){
+	char ImageName[100];
+//	strcpy(ImageName, argv[1]);
+	char PsfName[100];// = "PSF.tif";
+    char OutName[100];
+	int iteration = 10;
+	//input image
+    int opt=0;
+    int longIndex=0;
+    opt=getopt_long(argc, argv, optString, longOpts, &longIndex);
+    while(opt!=-1){
+        switch(opt){
+            case 'i':
+                strcpy(ImageName, optarg);
+                break;
+            case 'p':
+                strcpy(PsfName, optarg);
+                break;
+            case 'o':
+                strcpy(OutName, optarg);
+                break;
+            case 'n':
+                iteration=atoi(optarg);
+                break;
+        }
+        opt=getopt_long(argc, argv, optString, longOpts, &longIndex);
+    }
+
+	int bw, bh, bd;
+	getImage_d_w_h(ImageName, bd, bw, bh);
+	printf("bd= %d\n", bd);
+	printf("bw= %d\n", bw);
+	printf("bh= %d\n", bh);
+
+	//read tiff picture
+	float *tifpic = (float*)malloc(sizeof(float)*bw*bh*bd);
+	for (int i = 0; i < bd; i++){
+		readTIFFImage(ImageName, &tifpic[i*bw*bh], bh, bw, i);
+	}
+	//end read,picture in dataYin
+	
+    //read psf
+	int kw, kh, kd;
+	getImage_d_w_h(PsfName, kd, kw, kh);
+	float *tifpsf = (float*)malloc(sizeof(float)*kw*kh*kd);
+	for (int i = 0; i < kd; i++){
+		readTIFFImage(PsfName, &tifpsf[i*kw*kh], kw, kh, i);
+	}
+	//end read psf
+
+	Signal y(tifpic, bd, bh, bw), h(tifpsf, kd, kh, kw);
+	float background = ToolboxSignal::minimum(y);
+	ToolboxSignal::addConstant(y, -background, 0);
+	ToolboxSignal::multiplyConstant(h, 1.0 / ToolboxSignal::sum(h));
+
+	int* shift =(int*)calloc(h.D,sizeof(int));
+	for (int d = 0; d < h.D;) { shift[d] = (h.N[d] / 2); ++d; }
+	ToolboxSignal::fftShift(h, shift, h.D);
+	int ylength = bw*bh*bd;
+	int hlength = kw*kh*kd;
+	if (!(ToolboxSignal::checkCompatibility(y, h))) {
+	    cout<<"check Compatibility"<<endl;
+		if (!(ToolboxSignal::resizePSF(y.N,h,y.D))) {
+			printf("PSF image and current image are of incompatible sizes.\nThis means that they are either of different dimension (e.g. a 2D PSF and a 3D image)\n or that the PSF has greater dimensions (e.g. a bigger width) than the image.");
+            return 0;
+		}
+	}
+    cout<<"image is ======"<<endl;
+    y.print_signal();
+    cout<<"PSF is ======"<<endl;
+    h.print_signal();
+	RichardsonLucy::process(y,h,iteration,ylength);
+    cout<<"after process"<<endl;
+    y.print_signal();
+    
+//    char OutName[100] = "out_of_";
+ //   strcat(OutName,ImageName);
+    image=TIFFOpen(OutName, "w");
+    if(image==NULL){
+        printf("Could not open output.tif\n");
+        exit(1);
+    }
+
+    TIFFSetField(image, TIFFTAG_SUBFILETYPE, FILETYPE_PAGE);
+    for(int k=0; k<bd; k++){
+        int bw, bh, ebw, ebh;
+        if(y.D==2){
+            bw=y.N[1]; bh=y.N[0];
+            ebw=y.extN[1]; ebh=y.extN[0];
+        }
+        else{
+            bw=y.N[2]; bh=y.N[1];
+            ebw=y.extN[2]; ebh=y.extN[1];
+        }
+        float *px=(float*)malloc(sizeof(float)*bw*bh);
+        for(int j=0; j<bh; j++)
+            for(int i=0; i<bw; i++){
+                px[i+bw*j]=y.array[k*ebw*ebh+j*ebw+i];
+            }
+        TIFFSetField(image, TIFFTAG_PAGENUMBER, k, bd);
+        writeImage(OutName, px, bw, bh, k);
+        free(px);
+    }
+        
+    free(tifpic);
+    free(tifpsf);
+    free(shift);
+    TIFFClose(image);
+    return 0;
+}
