@@ -8,12 +8,12 @@ from lambdaimage import preprocess as prep
 from lambdaimage import registration as reg
 from lambdaimage import fusion as fus
 from pyspark import SparkContext, SparkConf
-from lambdaimage import ThunderContext
+from lambdaimage import lambdaimageContext
 from lambdaimage.utils.tool import exeTime, log, showsize
 import numpy as np
 
 conf = SparkConf().setAppName('test').setMaster('local[1]').set('spark.executor.memory','2g').set('spark.driver.maxResultSize','6g').set('spark.driver.memory','8g').set('spark.local.dir','/dev/shm').set('spark.storage.memoryFraction','0.2').set('spark.default.parallelism','10')
-tsc=ThunderContext.start(conf=conf)
+tsc=lambdaimageContext.start(conf=conf)
     
 log('info')('tiff load start...')
 rddA = tsc.loadImages('/home/wb/data/1-L/*.tif', inputFormat='tif-stack')

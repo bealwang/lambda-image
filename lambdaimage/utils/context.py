@@ -7,7 +7,7 @@ from lambdaimage.utils.datasets import DataSets
 from lambdaimage.utils.params import Params
 
 
-class ThunderContext():
+class lambdaimageContext():
     """
     Wrapper for a SparkContext that provides an entry point for loading and saving.
 
@@ -21,10 +21,10 @@ class ThunderContext():
     @classmethod
     def start(cls, *args, **kwargs):
         """
-        Starts a ThunderContext using the same arguments as SparkContext
+        Starts a lambdaimageContext using the same arguments as SparkContext
         """
         from pyspark import SparkContext
-        return ThunderContext(SparkContext(*args, **kwargs))
+        return lambdaimageContext(SparkContext(*args, **kwargs))
 
     def addPyFile(self, path):
         """
@@ -446,7 +446,7 @@ class ThunderContext():
         """
         Write out Images data as Series data, saved in a flat binary format.
 
-        The resulting files may subsequently be read in using ThunderContext.loadSeries().
+        The resulting files may subsequently be read in using lambdaimageContext.loadSeries().
         Loading Series data directly will likely be faster than converting image data
         to a Series object through loadImagesAsSeries().
 
@@ -590,7 +590,7 @@ class ThunderContext():
         Returns
         -------
         data : Data object
-            Generated dataset as a Thunder data objects (e.g Series or Images)
+            Generated dataset as a lambdaimage data objects (e.g Series or Images)
         """
         import atexit
         import shutil
@@ -656,7 +656,7 @@ class ThunderContext():
         Returns
         -------
         data : a Data object (usually a Series or Images)
-            The dataset as one of Thunder's data objects
+            The dataset as one of lambdaimage's data objects
 
         params : dict
             Parameters or metadata for dataset
@@ -807,7 +807,7 @@ class ThunderContext():
 
     def setAWSCredentials(self, awsAccessKeyId, awsSecretAccessKey):
         """
-        Manually set AWS access credentials to be used by Thunder.
+        Manually set AWS access credentials to be used by lambdaimage.
 
         Provided for hosted cloud environments without filesystem access. If
         launching a cluster using the lambdaimage-ec2 script, credentials will be

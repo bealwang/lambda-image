@@ -5,7 +5,7 @@
 ################################
 
 from lambdaimage.segmentation.segmentation import *
-from lambdaimage import ThunderContext
+from lambdaimage import lambdaimageContext
 from test_utils import PySparkTestCase
 import numpy as np
 from nose.tools import assert_equals
@@ -17,7 +17,7 @@ R_pwd = os.path.abspath('.') + '/test_data/R_side/*.tif'
 class PySparkTestSegmentationCase(PySparkTestCase):
     def setUp(self):
         super(PySparkTestSegmentationCase, self).setUp()
-        self.tsc = ThunderContext(self.sc)
+        self.tsc = lambdaimageContext(self.sc)
         self.L_imgs = self.tsc.loadImages(L_pwd, inputFormat='tif-stack')
         self.R_imgs = self.tsc.loadImages(R_pwd, inputFormat='tif-stack')
         self.dtype = self.L_imgs.collectValuesAsArray().dtype

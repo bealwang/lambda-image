@@ -1,2 +1,2 @@
-"""Modules related to reading and writing Thunder RDD Data objects across filesystems and data formats.
+"""Modules related to reading and writing lambdaimage RDD Data objects across filesystems and data formats.
 """

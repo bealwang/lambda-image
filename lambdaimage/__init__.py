@@ -14,5 +14,5 @@ from lambdaimage.rdds.images import Images
 
 # utilities
 #from lambdaimage.utils.datasets import DataSets
-from lambdaimage.utils.context import ThunderContext
+from lambdaimage.utils.context import lambdaimageContext
 from lambdaimage.utils import tool

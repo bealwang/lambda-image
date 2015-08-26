@@ -7,7 +7,7 @@ from numpy import arange, array, array_equal, mod
 from numpy import dtype as dtypeFunc
 
 from test_utils import PySparkTestCaseWithOutputDir
-from lambdaimage import ThunderContext
+from lambdaimage import lambdaimageContext
 
 _have_image = False
 try:
@@ -21,7 +21,7 @@ except ImportError:
 class TestContextLoading(PySparkTestCaseWithOutputDir):
     def setUp(self):
         super(TestContextLoading, self).setUp()
-        self.tsc = ThunderContext(self.sc)
+        self.tsc = lambdaimageContext(self.sc)
 
     @staticmethod
     def _findTestResourcesDir(resourcesDirName="resources"):
@@ -280,7 +280,7 @@ class TestContextWriting(PySparkTestCaseWithOutputDir):
 
     def setUp(self):
         super(TestContextWriting, self).setUp()
-        self.tsc = ThunderContext(self.sc)
+        self.tsc = lambdaimageContext(self.sc)
 
     def test_export_npy(self):
 
@@ -339,7 +339,7 @@ class TestContextWriting(PySparkTestCaseWithOutputDir):
 class TestLoadIrregularImages(PySparkTestCaseWithOutputDir):
     def setUp(self):
         super(TestLoadIrregularImages, self).setUp()
-        self.tsc = ThunderContext(self.sc)
+        self.tsc = lambdaimageContext(self.sc)
 
     def _generate_array(self, dtype):
         self.ary = arange(256, dtype=dtypeFunc(dtype)).reshape((16, 4, 4))  # 16 pages of 4x4 images
