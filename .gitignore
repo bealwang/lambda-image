@@ -5,6 +5,7 @@
 *.pyc
 *.png
 *.jpg
+*.tif
 /dist/
 /build/
 /lambdaimage.egg-info/
