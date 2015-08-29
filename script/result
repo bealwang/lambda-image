@@ -1,0 +1,7418 @@
+Warning: SPARK_MEM is deprecated, please use a more specific config option
+(e.g., spark.executor.memory or spark.driver.memory).
+Spark assembly has been built with Hive, including Datanucleus jars on classpath
+15/08/27 20:22:52 INFO SparkContext: Running Spark version 1.3.0
+15/08/27 20:22:52 INFO SecurityManager: Changing view acls to: wb
+15/08/27 20:22:52 INFO SecurityManager: Changing modify acls to: wb
+15/08/27 20:22:52 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(wb); users with modify permissions: Set(wb)
+15/08/27 20:22:53 INFO Slf4jLogger: Slf4jLogger started
+15/08/27 20:22:53 INFO Remoting: Starting remoting
+15/08/27 20:22:53 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@blade12:46255]
+15/08/27 20:22:53 INFO Utils: Successfully started service 'sparkDriver' on port 46255.
+15/08/27 20:22:53 INFO SparkEnv: Registering MapOutputTracker
+15/08/27 20:22:53 INFO SparkEnv: Registering BlockManagerMaster
+15/08/27 20:22:53 INFO DiskBlockManager: Created local directory at /home/wb/TEMP/spark-7a183350-a8ec-4a3c-a5bd-b93b46a21da5/blockmgr-13f51aaa-4753-45d5-9cbc-435da1375f0c
+15/08/27 20:22:53 INFO MemoryStore: MemoryStore started with capacity 5.2 GB
+15/08/27 20:22:53 INFO HttpFileServer: HTTP File server directory is /home/wb/TEMP/spark-6162d9e7-4007-488b-9944-d8be0e145ff9/httpd-b1fd26f0-35d8-4eb2-8550-8423bafa84a3
+15/08/27 20:22:53 INFO HttpServer: Starting HTTP Server
+15/08/27 20:22:53 INFO Server: jetty-8.y.z-SNAPSHOT
+15/08/27 20:22:53 INFO AbstractConnector: Started SocketConnector@0.0.0.0:50921
+15/08/27 20:22:53 INFO Utils: Successfully started service 'HTTP file server' on port 50921.
+15/08/27 20:22:53 INFO SparkEnv: Registering OutputCommitCoordinator
+15/08/27 20:22:53 INFO Server: jetty-8.y.z-SNAPSHOT
+15/08/27 20:22:53 INFO AbstractConnector: Started SelectChannelConnector@0.0.0.0:4040
+15/08/27 20:22:53 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/08/27 20:22:53 INFO SparkUI: Started SparkUI at http://blade12:4040
+15/08/27 20:22:53 WARN SparkContext: Using SPARK_MEM to set amount of memory to use per executor process is deprecated, please use spark.executor.memory instead.
+15/08/27 20:22:53 INFO Executor: Starting executor ID <driver> on host localhost
+15/08/27 20:22:53 INFO AkkaUtils: Connecting to HeartbeatReceiver: akka.tcp://sparkDriver@blade12:46255/user/HeartbeatReceiver
+15/08/27 20:22:53 INFO NettyBlockTransferService: Server created on 36747
+15/08/27 20:22:53 INFO BlockManagerMaster: Trying to register BlockManager
+15/08/27 20:22:53 INFO BlockManagerMasterActor: Registering block manager localhost:36747 with 5.2 GB RAM, BlockManagerId(<driver>, localhost, 36747)
+15/08/27 20:22:53 INFO BlockManagerMaster: Registered BlockManager
+15/08/27 20:22:54 INFO MemoryStore: ensureFreeSpace(304) called with curMem=0, maxMem=5556991426
+15/08/27 20:22:54 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 304.0 B, free 5.2 GB)
+15/08/27 20:22:54 INFO MemoryStore: ensureFreeSpace(39011) called with curMem=304, maxMem=5556991426
+15/08/27 20:22:54 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 38.1 KB, free 5.2 GB)
+15/08/27 20:22:54 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:36747 (size: 38.1 KB, free: 5.2 GB)
+15/08/27 20:22:54 INFO BlockManagerMaster: Updated info of block broadcast_0_piece0
+15/08/27 20:22:54 INFO SparkContext: Created broadcast 0 from broadcast at PythonRDD.scala:383
+15/08/27 20:22:54 INFO MemoryStore: ensureFreeSpace(304) called with curMem=39315, maxMem=5556991426
+15/08/27 20:22:54 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 304.0 B, free 5.2 GB)
+15/08/27 20:22:54 INFO MemoryStore: ensureFreeSpace(93) called with curMem=39619, maxMem=5556991426
+15/08/27 20:22:54 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 93.0 B, free 5.2 GB)
+15/08/27 20:22:54 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:36747 (size: 93.0 B, free: 5.2 GB)
+15/08/27 20:22:54 INFO BlockManagerMaster: Updated info of block broadcast_1_piece0
+15/08/27 20:22:54 INFO SparkContext: Created broadcast 1 from broadcast at PythonRDD.scala:383
+15/08/27 20:22:54 INFO SparkContext: Starting job: collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259
+15/08/27 20:22:54 INFO DAGScheduler: Got job 0 (collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259) with 4 output partitions (allowLocal=false)
+15/08/27 20:22:54 INFO DAGScheduler: Final stage: Stage 0(collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259)
+15/08/27 20:22:54 INFO DAGScheduler: Parents of final stage: List()
+15/08/27 20:22:54 INFO DAGScheduler: Missing parents: List()
+15/08/27 20:22:54 INFO DAGScheduler: Submitting Stage 0 (PythonRDD[1] at collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259), which has no missing parents
+15/08/27 20:22:54 INFO MemoryStore: ensureFreeSpace(7032) called with curMem=39712, maxMem=5556991426
+15/08/27 20:22:54 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 6.9 KB, free 5.2 GB)
+15/08/27 20:22:54 INFO MemoryStore: ensureFreeSpace(5550) called with curMem=46744, maxMem=5556991426
+15/08/27 20:22:54 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 5.4 KB, free 5.2 GB)
+15/08/27 20:22:54 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:36747 (size: 5.4 KB, free: 5.2 GB)
+15/08/27 20:22:54 INFO BlockManagerMaster: Updated info of block broadcast_2_piece0
+15/08/27 20:22:54 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:839
+15/08/27 20:22:54 INFO DAGScheduler: Submitting 4 missing tasks from Stage 0 (PythonRDD[1] at collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259)
+15/08/27 20:22:54 INFO TaskSchedulerImpl: Adding task set 0.0 with 4 tasks
+15/08/27 20:22:54 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 1303 bytes)
+15/08/27 20:22:54 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 1300 bytes)
+15/08/27 20:22:54 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, PROCESS_LOCAL, 1303 bytes)
+15/08/27 20:22:54 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, localhost, PROCESS_LOCAL, 1301 bytes)
+15/08/27 20:22:54 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/08/27 20:22:54 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/08/27 20:22:54 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+15/08/27 20:22:54 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+inv deconv from 
+bw= 100
+bh= 100
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 344
+bh= 348
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 450
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+15/08/27 20:22:55 ERROR Executor: Exception in task 2.0 in stage 0.0 (TID 2)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/worker.py", line 101, in main
+    process()
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/worker.py", line 96, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/serializers.py", line 236, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+  File "build/bdist.linux-x86_64/egg/lambdaimage/imgprocessing/deconvolution.py", line 38, in <lambda>
+  File "build/bdist.linux-x86_64/egg/lambdaimage/imgprocessing/decmethods/deconv_c.py", line 49, in deconv_func
+    libcd.deconv(image, y_nx, y_ny, y_nz, psf, h_nx, h_ny, h_nz, iter)
+ArgumentError: argument 1: <type 'exceptions.TypeError'>: array must have 2 dimension(s)
+
+	at org.apache.spark.api.python.PythonRDD$$anon$1.read(PythonRDD.scala:135)
+	at org.apache.spark.api.python.PythonRDD$$anon$1.<init>(PythonRDD.scala:176)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:94)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:277)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:244)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:61)
+	at org.apache.spark.scheduler.Task.run(Task.scala:64)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:203)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+iteration: 1
+15/08/27 20:22:55 WARN TaskSetManager: Lost task 2.0 in stage 0.0 (TID 2, localhost): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/worker.py", line 101, in main
+    process()
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/worker.py", line 96, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/serializers.py", line 236, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+  File "build/bdist.linux-x86_64/egg/lambdaimage/imgprocessing/deconvolution.py", line 38, in <lambda>
+  File "build/bdist.linux-x86_64/egg/lambdaimage/imgprocessing/decmethods/deconv_c.py", line 49, in deconv_func
+    libcd.deconv(image, y_nx, y_ny, y_nz, psf, h_nx, h_ny, h_nz, iter)
+ArgumentError: argument 1: <type 'exceptions.TypeError'>: array must have 2 dimension(s)
+
+	at org.apache.spark.api.python.PythonRDD$$anon$1.read(PythonRDD.scala:135)
+	at org.apache.spark.api.python.PythonRDD$$anon$1.<init>(PythonRDD.scala:176)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:94)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:277)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:244)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:61)
+	at org.apache.spark.scheduler.Task.run(Task.scala:64)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:203)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+iteration: 2
+iteration: 2
+15/08/27 20:22:55 ERROR TaskSetManager: Task 2 in stage 0.0 failed 1 times; aborting job
+15/08/27 20:22:55 INFO TaskSchedulerImpl: Cancelling stage 0
+iteration: 3
+15/08/27 20:22:55 INFO TaskSchedulerImpl: Stage 0 was cancelled
+iteration: 3
+15/08/27 20:22:55 INFO Executor: Executor is trying to kill task 0.0 in stage 0.0 (TID 0)
+15/08/27 20:22:55 INFO Executor: Executor is trying to kill task 1.0 in stage 0.0 (TID 1)
+15/08/27 20:22:55 INFO Executor: Executor is trying to kill task 3.0 in stage 0.0 (TID 3)
+15/08/27 20:22:55 INFO DAGScheduler: Job 0 failed: collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259, took 0.857801 s
+iteration: 4
+iteration: 2
+iteration: 4
+15/08/27 20:22:55 INFO MemoryStore: ensureFreeSpace(304) called with curMem=52294, maxMem=5556991426
+15/08/27 20:22:55 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 304.0 B, free 5.2 GB)
+iteration: 5
+15/08/27 20:22:55 INFO MemoryStore: ensureFreeSpace(39011) called with curMem=52598, maxMem=5556991426
+15/08/27 20:22:55 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 38.1 KB, free 5.2 GB)
+15/08/27 20:22:55 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:36747 (size: 38.1 KB, free: 5.2 GB)
+15/08/27 20:22:55 INFO BlockManagerMaster: Updated info of block broadcast_3_piece0
+15/08/27 20:22:55 INFO SparkContext: Created broadcast 3 from broadcast at PythonRDD.scala:383
+iteration: 3
+iteration: 5
+15/08/27 20:22:55 INFO MemoryStore: ensureFreeSpace(304) called with curMem=91609, maxMem=5556991426
+iteration: 6
+15/08/27 20:22:55 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 304.0 B, free 5.2 GB)
+15/08/27 20:22:55 INFO MemoryStore: ensureFreeSpace(93) called with curMem=91913, maxMem=5556991426
+15/08/27 20:22:55 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 93.0 B, free 5.2 GB)
+15/08/27 20:22:55 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on localhost:36747 (size: 93.0 B, free: 5.2 GB)
+15/08/27 20:22:55 INFO BlockManagerMaster: Updated info of block broadcast_4_piece0
+15/08/27 20:22:55 INFO SparkContext: Created broadcast 4 from broadcast at PythonRDD.scala:383
+iteration: 6
+iteration: 7
+iteration: 4
+15/08/27 20:22:55 INFO SparkContext: Starting job: collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259
+15/08/27 20:22:55 INFO DAGScheduler: Got job 1 (collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259) with 12 output partitions (allowLocal=false)
+15/08/27 20:22:55 INFO DAGScheduler: Final stage: Stage 1(collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259)
+15/08/27 20:22:55 INFO DAGScheduler: Parents of final stage: List()
+iteration: 5
+iteration: 7
+15/08/27 20:22:55 INFO DAGScheduler: Missing parents: List()
+15/08/27 20:22:55 INFO DAGScheduler: Submitting Stage 1 (PythonRDD[3] at collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259), which has no missing parents
+iteration: 8
+15/08/27 20:22:55 INFO MemoryStore: ensureFreeSpace(7040) called with curMem=92006, maxMem=5556991426
+15/08/27 20:22:55 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 6.9 KB, free 5.2 GB)
+15/08/27 20:22:55 INFO MemoryStore: ensureFreeSpace(5568) called with curMem=99046, maxMem=5556991426
+15/08/27 20:22:55 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 5.4 KB, free 5.2 GB)
+iteration: 8
+iteration: 6
+15/08/27 20:22:55 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on localhost:36747 (size: 5.4 KB, free: 5.2 GB)
+iteration: 9
+15/08/27 20:22:55 INFO BlockManagerMaster: Updated info of block broadcast_5_piece0
+15/08/27 20:22:55 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:839
+15/08/27 20:22:55 INFO DAGScheduler: Submitting 12 missing tasks from Stage 1 (PythonRDD[3] at collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259)
+15/08/27 20:22:55 INFO TaskSchedulerImpl: Adding task set 1.0 with 12 tasks
+iteration: 10
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 4, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 5, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 6, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 7, localhost, PROCESS_LOCAL, 1736 bytes)
+iteration: 7
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 8, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 9, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 INFO Executor: Executor killed task 1.0 in stage 0.0 (TID 1)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 10, localhost, PROCESS_LOCAL, 1736 bytes)
+iteration: 9
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 11, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 12, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 INFO Executor: Running task 1.0 in stage 1.0 (TID 5)
+15/08/27 20:22:55 INFO Executor: Running task 0.0 in stage 1.0 (TID 4)
+15/08/27 20:22:55 INFO Executor: Running task 3.0 in stage 1.0 (TID 7)
+15/08/27 20:22:55 INFO Executor: Running task 2.0 in stage 1.0 (TID 6)
+15/08/27 20:22:55 INFO Executor: Running task 4.0 in stage 1.0 (TID 8)
+iteration: 8
+iteration: 10
+iteration: 9
+iteration: 10
+15/08/27 20:22:55 INFO Executor: Running task 6.0 in stage 1.0 (TID 10)
+15/08/27 20:22:55 INFO Executor: Executor killed task 0.0 in stage 0.0 (TID 0)
+15/08/27 20:22:55 INFO Executor: Running task 5.0 in stage 1.0 (TID 9)
+15/08/27 20:22:55 INFO Executor: Running task 7.0 in stage 1.0 (TID 11)
+15/08/27 20:22:55 INFO Executor: Running task 8.0 in stage 1.0 (TID 12)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 13, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 INFO Executor: Running task 9.0 in stage 1.0 (TID 13)
+15/08/27 20:22:55 WARN TaskSetManager: Lost task 1.0 in stage 0.0 (TID 1, localhost): TaskKilled (killed intentionally)
+15/08/27 20:22:55 INFO Executor: Executor killed task 3.0 in stage 0.0 (TID 3)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 14, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:55 WARN TaskSetManager: Lost task 0.0 in stage 0.0 (TID 0, localhost): TaskKilled (killed intentionally)
+15/08/27 20:22:55 INFO Executor: Running task 10.0 in stage 1.0 (TID 14)
+15/08/27 20:22:55 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 15, localhost, PROCESS_LOCAL, 1990 bytes)
+15/08/27 20:22:55 WARN TaskSetManager: Lost task 3.0 in stage 0.0 (TID 3, localhost): TaskKilled (killed intentionally)
+15/08/27 20:22:55 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/08/27 20:22:55 INFO Executor: Running task 11.0 in stage 1.0 (TID 15)
+Traceback (most recent call last):
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/daemon.py", line 162, in manager
+    code = worker(sock)
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/daemon.py", line 64, in worker
+    outfile.flush()
+IOError: [Errno 32] Broken pipe
+inv deconv from inv deconv from 
+
+bw= bw= 512512
+
+bh= bh= 512512
+
+bd= bd= 11
+
+kw= kw= 100100
+
+kh= kh= 100100
+
+kd= kd= 11
+
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 3
+iteration: 1
+iteration: 3
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 4
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 2
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 4
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 2
+iteration: 4
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 5
+iteration: 4
+iteration: 3
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 1
+iteration: 5
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 1
+iteration: 5
+iteration: 7
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 8
+iteration: 2
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 7
+iteration: 5
+iteration: 8
+iteration: 8
+iteration: 6
+iteration: 8
+iteration: 9
+iteration: 2
+iteration: 9
+iteration: 8
+iteration: 3
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 6
+iteration: 7
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 10
+iteration: 4
+iteration: 3
+iteration: 8
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 7
+iteration: 10
+iteration: 8
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1iteration: 10
+
+iteration: 5
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 5
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 7
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+iteration: 6
+iteration: 8
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 9
+iteration: 9
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 8
+iteration: 2
+iteration: 10
+iteration: 10
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 1
+iteration: 9
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 4
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 3
+iteration: 3
+iteration: 4
+iteration: 4
+iteration: 5
+iteration: 2
+iteration: 5
+iteration: 2
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 5
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 3
+iteration: 6
+iteration: 5
+iteration: 6
+iteration: 1
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 4
+iteration: 1
+iteration: 4
+iteration: 7
+iteration: 7
+iteration: 6
+iteration: 1
+iteration: 6
+iteration: 8
+iteration: 6
+iteration: 8
+iteration: 5
+iteration: 2
+iteration: 5
+iteration: 8
+iteration: 7
+iteration: 2
+iteration: 8
+iteration: 9
+iteration: 9
+iteration: 7
+iteration: 3
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 9
+iteration: 2
+iteration: 8
+iteration: 3
+iteration: 9
+iteration: 10
+iteration: 10
+iteration: 4
+iteration: 8
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 7
+iteration: 3
+iteration: 9
+iteration: 4
+iteration: 10
+iteration: 5
+iteration: 9
+iteration: 9
+iteration: 8
+inv deconv from inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 4
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 5
+iteration: 6
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100iteration: 10
+
+kh= 100
+kd= 1
+iteration: 9
+iteration: 9
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 10
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 10
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 6
+iteration: 7
+iteration: 1
+iteration: 8
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 9
+iteration: 8
+iteration: 2
+iteration: 2
+iteration: 8
+iteration: 3
+iteration: 3
+iteration: 10
+iteration: 1
+iteration: 9
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 2
+iteration: 4
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= iteration: 4
+100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 2
+iteration: 5
+iteration: 10
+iteration: 2
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 4
+iteration: 5
+inv deconv from 
+bw= iteration: 5
+512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 3
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 6
+iteration: 6
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 7
+iteration: 1
+iteration: 6
+iteration: 1
+iteration: 7
+iteration: 7
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 5
+iteration: 7
+iteration: 8
+iteration: 7
+iteration: 8
+iteration: 5
+iteration: 8
+iteration: 7
+iteration: 1
+iteration: 9
+iteration: 2
+iteration: 2
+iteration: 6
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 6
+iteration: 8
+iteration: 10
+iteration: 3
+iteration: 7
+iteration: 3
+iteration: 10
+iteration: 10
+iteration: 2
+iteration: 9
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 7
+iteration: 4
+iteration: 8
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 10
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 10
+inv deconv from iteration: 5
+
+bw= 512
+bh= 512iteration: 9
+
+bd= 1
+iteration: 5
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 6
+iteration: 6
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 1
+iteration: 9
+iteration: 1
+iteration: 7
+iteration: 7
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 8
+iteration: 8
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 7
+iteration: 2
+iteration: 2
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 3
+iteration: 2
+iteration: 3
+iteration: 8
+iteration: 2
+iteration: 10
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 4
+iteration: 10
+iteration: 3
+iteration: 4
+iteration: 9
+iteration: 3
+iteration: 1
+iteration: 4
+iteration: 4
+iteration: 5
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 5
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 4
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 2
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 5
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 3
+iteration: 1
+iteration: 5
+iteration: 6
+iteration: 1
+iteration: 7
+iteration: 6
+iteration: 3
+iteration: 7
+iteration: 8
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 1
+iteration: 7
+iteration: 4
+iteration: 8
+iteration: 8
+iteration: 5
+iteration: 9
+iteration: 2
+iteration: 2
+iteration: 7
+iteration: 7
+iteration: 8
+iteration: 5
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 6
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 8
+iteration: 8
+iteration: 9
+iteration: 9
+iteration: 6
+iteration: 10
+iteration: 10
+iteration: 7
+iteration: 4
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= iteration: 3
+100
+kd= 1
+iteration: 9
+iteration: 9
+iteration: 10
+iteration: 10
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 5
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 5
+iteration: 10
+iteration: 10
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 6
+iteration: 10
+iteration: 7
+iteration: 7
+iteration: 1
+iteration: 7
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 10
+iteration: 8
+iteration: 8
+iteration: 3
+iteration: 9
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 2
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 9
+iteration: 2
+iteration: 4
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 1
+iteration: 5
+iteration: 10
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 4
+iteration: 3
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 3
+iteration: 5
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 1
+iteration: 7
+iteration: 5
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 1
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 5
+iteration: 2
+iteration: 6
+iteration: 1
+iteration: 6
+iteration: 4
+iteration: 8
+iteration: 9
+iteration: 7
+iteration: 3
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 2
+iteration: 1
+iteration: 9
+iteration: 5
+iteration: 8
+iteration: 4
+iteration: 2
+iteration: 7
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 8
+iteration: 3
+iteration: 10
+iteration: 9
+iteration: 5
+iteration: 3
+iteration: 6
+iteration: 9
+iteration: 8
+iteration: 2
+iteration: 8
+iteration: 9
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 7
+iteration: 9
+iteration: 10
+iteration: 9
+iteration: 10
+iteration: 5
+iteration: 3
+iteration: 7
+iteration: 5
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 10
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 4
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 9
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 5
+iteration: 9
+iteration: 1
+iteration: 2
+iteration: 10
+iteration: 1
+iteration: 7
+iteration: 1
+iteration: 8
+iteration: 6
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 1
+iteration: 10
+iteration: 3
+iteration: 8
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 9
+iteration: 7
+iteration: 4
+iteration: 2
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 2
+iteration: 5
+iteration: 8
+iteration: 10
+iteration: 3
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 4
+iteration: 4
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 3
+iteration: 3
+iteration: 6
+iteration: 9
+iteration: 5
+iteration: 4
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 7
+iteration: 10
+iteration: 4
+iteration: 2
+iteration: 6
+iteration: 5
+iteration: 5
+iteration: 1
+iteration: 6
+iteration: 8
+iteration: 5
+iteration: 2
+iteration: 5
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 9
+iteration: 2
+iteration: 4
+iteration: 3
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 1
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 3
+iteration: 1
+iteration: 7
+iteration: 7
+iteration: 8
+iteration: 4
+iteration: 9
+iteration: 9
+iteration: 5
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 4
+iteration: 8
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 5
+iteration: 3
+iteration: 2
+iteration: 9
+iteration: 5
+iteration: 9
+iteration: 6
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+inv deconv from iteration: 6
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 10
+iteration: 10
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 7
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+inv deconv from 
+bw= 512kw= 100
+kh= 100
+kd= 1
+
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 8
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 2
+iteration: 5
+iteration: 3
+iteration: 9
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 7
+iteration: 9
+iteration: 3
+iteration: 8
+iteration: 1
+iteration: 6
+iteration: 10
+iteration: 1
+iteration: 4
+iteration: 3
+iteration: 10
+iteration: 4
+iteration: 9
+iteration: 2
+iteration: 2
+iteration: 7
+iteration: 8
+iteration: 5
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 5
+iteration: 2
+iteration: 3
+iteration: 10
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 8
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 2
+iteration: 7
+iteration: 4
+iteration: 3
+iteration: 9
+iteration: 9
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 5
+iteration: 1
+iteration: 8
+iteration: 7
+iteration: 4
+iteration: 5
+iteration: 8
+iteration: 10
+iteration: 1
+iteration: 6
+iteration: 8
+iteration: 3
+iteration: 5
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 6
+iteration: 1
+iteration: 2
+inv deconv from iteration: 9
+iteration: 7
+iteration: 10
+iteration: 10
+iteration: 2
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 4
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 2
+iteration: 3
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 3
+iteration: 8
+iteration: 3
+iteration: 9
+iteration: 4
+inv deconv from 
+bw= iteration: 1
+512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 5
+iteration: 4
+iteration: 9
+iteration: 4
+iteration: 10
+iteration: 5
+iteration: 1
+iteration: 9
+iteration: 5
+iteration: 1
+iteration: 10
+iteration: 6
+iteration: 5
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+iteration: 6
+iteration: 10
+iteration: 6
+iteration: 6
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 7
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 7
+iteration: 7
+inv deconv from iteration: 2
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 3
+iteration: 8
+iteration: 3
+iteration: 8
+iteration: 3
+iteration: 8
+iteration: 8
+iteration: 3
+iteration: 4
+iteration: 4
+iteration: 4
+iteration: 1
+iteration: 1
+iteration: 9
+iteration: 9
+iteration: 1
+iteration: 5
+iteration: 4
+iteration: 9
+iteration: 5
+iteration: 4
+iteration: 10
+iteration: 5
+iteration: 10
+iteration: 5
+iteration: 9
+iteration: 5
+iteration: 10
+iteration: 2
+iteration: 6
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 2
+iteration: 6
+iteration: 2
+iteration: 3
+iteration: 10
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 7
+iteration: 4
+iteration: 3
+iteration: 7
+iteration: 7
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 5
+iteration: 8
+iteration: 3
+iteration: 4
+iteration: 8
+iteration: 1
+iteration: 1
+iteration: 9
+iteration: 8
+iteration: 6
+iteration: 9
+iteration: 1
+iteration: 8
+iteration: 10
+iteration: 5
+iteration: 9
+iteration: 1
+iteration: 7
+iteration: 9
+iteration: 4
+iteration: 10
+iteration: 2
+iteration: 2
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 6
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1407, boot = 7, init = 150, finish = 1250
+iteration: 2
+iteration: 10
+iteration: 5
+iteration: 2
+iteration: 3
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1421, boot = 4, init = 144, finish = 1273
+iteration: 10
+iteration: 9
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 6
+iteration: 3
+iteration: 4
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1434, boot = 8, init = 143, finish = 1283
+iteration: 10
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 7
+iteration: 5
+iteration: 4
+iteration: 8
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1451, boot = 12, init = 151, finish = 1288
+iteration: 5
+iteration: 8
+iteration: 1
+iteration: 6
+iteration: 9
+iteration: 5
+iteration: 4
+iteration: 9
+iteration: 1
+iteration: 10
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 10
+iteration: 5
+iteration: 2
+15/08/27 20:22:56 INFO Executor: Finished task 4.0 in stage 1.0 (TID 8). 8431495 bytes result sent to driver
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1489, boot = 3, init = 146, finish = 1340
+iteration: 8
+iteration: 2
+iteration: 7
+iteration: 7
+iteration: 6
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1491, boot = 4, init = 143, finish = 1344
+iteration: 8
+iteration: 8
+iteration: 7
+15/08/27 20:22:56 INFO Executor: Finished task 1.0 in stage 1.0 (TID 5). 8431495 bytes result sent to driver
+iteration: 9
+15/08/27 20:22:56 INFO Executor: Finished task 2.0 in stage 1.0 (TID 6). 8431495 bytes result sent to driver
+iteration: 3
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 3
+15/08/27 20:22:56 INFO Executor: Finished task 6.0 in stage 1.0 (TID 10). 8431495 bytes result sent to driver
+iteration: 4
+iteration: 10
+iteration: 10
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1531, boot = 18, init = 137, finish = 1376
+15/08/27 20:22:56 INFO Executor: Finished task 0.0 in stage 1.0 (TID 4). 8431495 bytes result sent to driver
+iteration: 4
+iteration: 9
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1538, boot = 3, init = 144, finish = 1391
+iteration: 5
+iteration: 5
+15/08/27 20:22:56 INFO Executor: Finished task 3.0 in stage 1.0 (TID 7). 8431495 bytes result sent to driver
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1551, boot = 22, init = 141, finish = 1388
+iteration: 10
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 8) in 1588 ms on localhost (1/12)
+iteration: 6
+iteration: 6
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 6) in 1600 ms on localhost (2/12)
+iteration: 7
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 10) in 1609 ms on localhost (3/12)
+iteration: 8
+15/08/27 20:22:56 INFO Executor: Finished task 5.0 in stage 1.0 (TID 9). 8431495 bytes result sent to driver
+iteration: 8
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 5) in 1622 ms on localhost (4/12)
+15/08/27 20:22:56 INFO Executor: Finished task 8.0 in stage 1.0 (TID 12). 8431495 bytes result sent to driver
+15/08/27 20:22:56 INFO Executor: Finished task 7.0 in stage 1.0 (TID 11). 8431495 bytes result sent to driver
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 4) in 1631 ms on localhost (5/12)
+iteration: 9
+iteration: 9
+iteration: 1
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 7) in 1633 ms on localhost (6/12)
+iteration: 10
+iteration: 10
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 11) in 1641 ms on localhost (7/12)
+iteration: 2
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1599, boot = 20, init = 200, finish = 1379
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 12) in 1645 ms on localhost (8/12)
+15/08/27 20:22:56 INFO PythonRDD: Times: total = 1604, boot = 28, init = 141, finish = 1435
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 9) in 1652 ms on localhost (9/12)
+iteration: 3
+iteration: 4
+15/08/27 20:22:56 INFO Executor: Finished task 9.0 in stage 1.0 (TID 13). 8431495 bytes result sent to driver
+15/08/27 20:22:56 INFO Executor: Finished task 10.0 in stage 1.0 (TID 14). 8431495 bytes result sent to driver
+iteration: 5
+iteration: 6
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 13) in 1640 ms on localhost (10/12)
+15/08/27 20:22:56 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 14) in 1638 ms on localhost (11/12)
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+15/08/27 20:22:57 INFO PythonRDD: Times: total = 1942, boot = 8, init = 197, finish = 1737
+15/08/27 20:22:57 INFO Executor: Finished task 11.0 in stage 1.0 (TID 15). 12646899 bytes result sent to driver
+15/08/27 20:22:57 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 15) in 1990 ms on localhost (12/12)
+15/08/27 20:22:57 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/08/27 20:22:57 INFO DAGScheduler: Stage 1 (collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259) finished in 2.050 s
+15/08/27 20:22:57 INFO DAGScheduler: Job 1 finished: collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259, took 2.064922 s
+15/08/27 20:22:57 INFO SparkContext: Starting job: count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260
+15/08/27 20:22:57 INFO DAGScheduler: Got job 2 (count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260) with 12 output partitions (allowLocal=false)
+15/08/27 20:22:57 INFO DAGScheduler: Final stage: Stage 2(count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260)
+15/08/27 20:22:57 INFO DAGScheduler: Parents of final stage: List()
+15/08/27 20:22:57 INFO DAGScheduler: Missing parents: List()
+15/08/27 20:22:57 INFO DAGScheduler: Submitting Stage 2 (PythonRDD[4] at count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260), which has no missing parents
+15/08/27 20:22:57 INFO MemoryStore: ensureFreeSpace(8368) called with curMem=104614, maxMem=5556991426
+15/08/27 20:22:57 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 8.2 KB, free 5.2 GB)
+15/08/27 20:22:57 INFO MemoryStore: ensureFreeSpace(6561) called with curMem=112982, maxMem=5556991426
+15/08/27 20:22:57 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 6.4 KB, free 5.2 GB)
+15/08/27 20:22:57 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on localhost:36747 (size: 6.4 KB, free: 5.2 GB)
+15/08/27 20:22:57 INFO BlockManagerMaster: Updated info of block broadcast_6_piece0
+15/08/27 20:22:57 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:839
+15/08/27 20:22:57 INFO DAGScheduler: Submitting 12 missing tasks from Stage 2 (PythonRDD[4] at count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260)
+15/08/27 20:22:57 INFO TaskSchedulerImpl: Adding task set 2.0 with 12 tasks
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 16, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 17, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 18, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 19, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 4.0 in stage 2.0 (TID 20, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 5.0 in stage 2.0 (TID 21, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 6.0 in stage 2.0 (TID 22, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 7.0 in stage 2.0 (TID 23, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 8.0 in stage 2.0 (TID 24, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 9.0 in stage 2.0 (TID 25, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 10.0 in stage 2.0 (TID 26, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:22:57 INFO TaskSetManager: Starting task 11.0 in stage 2.0 (TID 27, localhost, PROCESS_LOCAL, 1990 bytes)
+15/08/27 20:22:57 INFO Executor: Running task 5.0 in stage 2.0 (TID 21)
+15/08/27 20:22:57 INFO Executor: Running task 7.0 in stage 2.0 (TID 23)
+15/08/27 20:22:57 INFO Executor: Running task 10.0 in stage 2.0 (TID 26)
+15/08/27 20:22:57 INFO Executor: Running task 0.0 in stage 2.0 (TID 16)
+15/08/27 20:22:57 INFO Executor: Running task 9.0 in stage 2.0 (TID 25)
+15/08/27 20:22:57 INFO Executor: Running task 6.0 in stage 2.0 (TID 22)
+15/08/27 20:22:57 INFO Executor: Running task 3.0 in stage 2.0 (TID 19)
+15/08/27 20:22:57 INFO Executor: Running task 2.0 in stage 2.0 (TID 18)
+15/08/27 20:22:57 INFO Executor: Running task 4.0 in stage 2.0 (TID 20)
+15/08/27 20:22:57 INFO Executor: Running task 11.0 in stage 2.0 (TID 27)
+15/08/27 20:22:57 INFO Executor: Running task 1.0 in stage 2.0 (TID 17)
+15/08/27 20:22:57 INFO Executor: Running task 8.0 in stage 2.0 (TID 24)
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 4
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 4
+iteration: 4
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 5
+iteration: 5
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 5
+iteration: 7
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 8
+iteration: 7
+iteration: 8
+iteration: 7
+iteration: 7
+iteration: 7
+iteration: 8
+iteration: 6
+iteration: 6
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 7
+iteration: 8
+iteration: 6
+iteration: 5
+iteration: 8
+iteration: 9
+iteration: 8
+iteration: 7
+iteration: 7
+iteration: 10
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 8
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 8
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 9
+inv deconv from inv deconv from 
+
+bw= bw= 512512
+
+bh= bh= 512512
+
+bd= bd= 11
+
+kw= kw= 100100
+
+kh= kh= 100100
+
+kd= kd= 11
+
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 8
+iteration: 10
+iteration: 1
+iteration: 7
+iteration: 1
+iteration: 10
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 9
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 2
+iteration: 10
+iteration: 2
+iteration: 9
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 1
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 10
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 4
+iteration: 4
+iteration: 3
+iteration: 3
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 2
+iteration: 5
+iteration: 5
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 2
+iteration: 4
+iteration: 5
+iteration: 3
+iteration: 6
+iteration: 4
+iteration: 6
+iteration: 3
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 4
+iteration: 3
+iteration: 1
+iteration: 1
+iteration: 7
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 6
+iteration: 5
+iteration: 4
+iteration: 7
+iteration: 4
+iteration: 6
+iteration: 6
+iteration: 8
+iteration: 5
+iteration: 2
+iteration: 2
+iteration: 7
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 5
+iteration: 8
+iteration: 7
+iteration: 9
+iteration: 7
+iteration: 3
+iteration: 6
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 8
+iteration: 6
+iteration: 9
+iteration: 3
+iteration: 10
+iteration: 9
+iteration: 4
+iteration: 8
+iteration: 7
+iteration: 7
+iteration: 9
+iteration: 9
+iteration: 8
+iteration: 7
+iteration: 5
+iteration: 10
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 8
+iteration: 10
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 9
+iteration: 8
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 9
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 10
+iteration: 5
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 1
+iteration: 1
+inv deconv from iteration: 1
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 9
+inv deconv from inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+
+bw= 512
+bh= 512
+bd= kw= 1
+100
+kh= 100
+kd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 2
+iteration: 7
+iteration: 10
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 2
+iteration: 3
+iteration: 1
+iteration: 8
+iteration: 1
+iteration: 1
+iteration: 3
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 4
+iteration: 4
+iteration: 9
+iteration: 1
+iteration: 4
+iteration: 5
+iteration: 2
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 2
+iteration: 10
+iteration: 5
+iteration: 5
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 3
+iteration: 1
+iteration: 6
+iteration: 2
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 6
+iteration: 6
+iteration: 4
+iteration: 6
+iteration: 6
+iteration: 4
+iteration: 7
+iteration: 3
+iteration: 7
+iteration: 4
+iteration: 4
+iteration: 2
+iteration: 7
+iteration: 5
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 8
+iteration: 4
+iteration: 8
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 8
+iteration: 6
+iteration: 6
+iteration: 8
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 6
+iteration: 1
+iteration: 9
+iteration: 7
+iteration: 7
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 10
+iteration: 7
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 8
+iteration: 8
+iteration: 2
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 10
+inv deconv from iteration: 7
+
+bw= 512
+bh= 512
+bd= 1
+iteration: 8
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 8
+iteration: 10
+iteration: 9
+iteration: 3
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+iteration: 7
+kh= 100
+kd= 1
+iteration: 9
+iteration: 10
+iteration: 4
+inv deconv from 
+bw= 512
+bh= 512
+bd= iteration: 10
+1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 10
+iteration: 8
+iteration: 10
+iteration: 1
+iteration: 5
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+kw= 100
+iteration: 1
+kh= 100
+kd= 1
+iteration: 10
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 9
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 7
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 8
+iteration: 1
+iteration: 3
+iteration: 3
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 4
+iteration: 1
+iteration: 2
+iteration: 4
+iteration: 9
+iteration: 4
+iteration: 3
+iteration: 3
+iteration: 4
+iteration: 1
+iteration: 2
+iteration: 10
+iteration: 2
+iteration: 5
+iteration: 5
+iteration: 5
+iteration: 2
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 6
+iteration: 4
+iteration: 3
+iteration: 6
+iteration: 3
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 3
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 4
+iteration: 4
+iteration: 1
+iteration: 5
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 5
+iteration: 5
+iteration: 8
+iteration: 8
+iteration: 9
+iteration: 6
+iteration: 8
+iteration: 9
+iteration: 9
+iteration: 7
+iteration: 7
+iteration: 6
+iteration: 2
+iteration: 9
+iteration: 9
+iteration: 6
+iteration: 7
+iteration: 10
+iteration: 10
+iteration: 7
+iteration: 10
+iteration: 8
+iteration: 3
+iteration: 9
+iteration: 10
+iteration: 10
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+inv deconv from iteration: 8
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 9
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+inv deconv from 
+bw= 512
+bh= 512kw= 100
+kh= 100
+kd= 1
+
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 1
+iteration: 5
+iteration: 10
+iteration: 10
+iteration: 9
+iteration: 1
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 2
+iteration: 1
+iteration: 3
+iteration: 7
+iteration: 10
+iteration: 2
+iteration: 2
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 4
+iteration: 1
+inv deconv from iteration: 8
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 1
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 5
+iteration: 1
+iteration: 2
+iteration: 9
+iteration: 3
+iteration: 4
+iteration: 6
+iteration: 4
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 10
+iteration: 2
+iteration: 2
+iteration: 7
+iteration: 5
+iteration: 2
+iteration: 5
+iteration: 4
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= iteration: 4
+100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 3
+iteration: 3
+iteration: 6
+iteration: 8
+iteration: 1
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 9
+iteration: 7
+iteration: 4
+iteration: 6
+iteration: 5
+iteration: 10
+iteration: 6
+iteration: 8
+iteration: 1
+iteration: 5
+iteration: 5
+iteration: 2
+iteration: 7
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 9
+iteration: 6
+iteration: 6
+iteration: 8
+iteration: 2
+iteration: 3
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 8
+iteration: 8
+iteration: 10
+iteration: 7
+iteration: 7
+iteration: 3
+iteration: 9
+iteration: 8
+iteration: 8
+iteration: 4
+iteration: 7
+iteration: 9
+inv deconv from iteration: 9
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 8
+iteration: 8
+iteration: 9
+iteration: 9
+iteration: 10
+iteration: 10
+iteration: 8
+iteration: 5
+iteration: 10
+iteration: 1
+iteration: 5
+iteration: 9
+iteration: 10
+iteration: 10
+iteration: 9
+inv deconv from inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= iteration: 6
+100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 10
+iteration: 2
+iteration: 7
+iteration: 9
+iteration: 7
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 3
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 8
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 10
+iteration: 1
+iteration: 8
+iteration: 4
+iteration: 9
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 5
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 6
+iteration: 3
+iteration: 10
+iteration: 10
+iteration: 3
+iteration: 2
+iteration: 7
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 2
+iteration: 4
+iteration: 2
+inv deconv from 
+bw= 512
+bh= 512iteration: 4
+
+bd= 1
+inv deconv from 
+bw= 512
+kw= 100
+kh= 100
+kd= 1
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 3
+iteration: 8
+iteration: 4
+iteration: 5
+iteration: 3
+iteration: 5
+iteration: 3
+iteration: 5
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 9
+iteration: 6
+iteration: 1
+iteration: 2
+iteration: 4
+iteration: 6
+iteration: 4
+iteration: 6
+iteration: 4
+iteration: 10
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 5
+iteration: 5
+iteration: 3
+iteration: 1
+iteration: 7
+iteration: 7
+iteration: 5
+iteration: 2
+iteration: 7
+iteration: 6
+iteration: 8
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 6
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 8
+iteration: 4
+iteration: 8
+iteration: 2
+iteration: 6
+iteration: 3
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 7
+iteration: 7
+iteration: 9
+iteration: 5
+iteration: 3
+iteration: 9
+iteration: 7
+iteration: 4
+iteration: 10
+iteration: 8
+iteration: 9
+iteration: 8
+iteration: 8
+iteration: 10
+iteration: 6
+iteration: 10
+iteration: 4
+iteration: 8
+iteration: 5
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 9
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+1
+kw= 100
+kh= 100
+kd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 10
+iteration: 8
+iteration: 1
+iteration: 10
+iteration: 6
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 7
+inv deconv from 
+bw= iteration: 1
+512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 9
+iteration: 1
+iteration: 2
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 8
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 10
+iteration: 8
+iteration: 3
+iteration: 9
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 10
+iteration: 1
+iteration: 9
+iteration: 3
+iteration: 4
+iteration: 2
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= iteration: 2
+iteration: 3
+100
+kh= 100
+kd= 1
+iteration: 10
+inv deconv from iteration: 3
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 5
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 2
+iteration: 2
+inv deconv from iteration: 2
+
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 6
+iteration: 1
+iteration: 1
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 7
+iteration: 4
+iteration: 4
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 8
+iteration: 2
+iteration: 2
+iteration: 8
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 3
+iteration: 9
+iteration: 6
+iteration: 7
+iteration: 9
+iteration: 3
+iteration: 6
+iteration: 8
+iteration: 7
+iteration: 1
+iteration: 4
+iteration: 10
+iteration: 8
+iteration: 9
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 4
+iteration: 7
+iteration: 9
+iteration: 8
+iteration: 5
+inv deconv from 
+bw= 512
+iteration: 9
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 9
+iteration: 8
+iteration: 2
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 5
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 10
+iteration: 9
+iteration: 6
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 10
+iteration: 9
+kw= 100
+kh= 100
+iteration: 3
+kd= 1
+iteration: 6
+iteration: 9
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 7
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 7
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 1
+iteration: 5
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 1
+iteration: 2
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 6
+iteration: 1
+iteration: 2
+iteration: 10
+iteration: 9
+iteration: 7
+iteration: 3
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 10
+iteration: 2
+iteration: 1
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 1
+iteration: 4
+iteration: 3
+iteration: 8
+iteration: 3
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+iteration: 3
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 2
+iteration: 2
+iteration: 9
+iteration: 4
+iteration: 4
+iteration: 2
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 3
+iteration: 1
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 4
+iteration: 3
+iteration: 10
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 1
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 2
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 5
+iteration: 7
+iteration: 5
+iteration: 6
+iteration: 2
+iteration: 7
+iteration: 5
+iteration: 8
+iteration: 8
+iteration: 3
+iteration: 9
+iteration: 6
+iteration: 8
+iteration: 6
+iteration: 6
+iteration: 3
+iteration: 8
+iteration: 7
+iteration: 9
+iteration: 9
+iteration: 4
+iteration: 7
+iteration: 9
+iteration: 7
+iteration: 10
+iteration: 7
+iteration: 4
+iteration: 9
+iteration: 10
+iteration: 8
+iteration: 10
+iteration: 5
+iteration: 8
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1251, boot = -280, init = 283, finish = 1248
+iteration: 10
+15/08/27 20:22:58 INFO Executor: Finished task 6.0 in stage 2.0 (TID 22). 698 bytes result sent to driver
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 6.0 in stage 2.0 (TID 22) in 1277 ms on localhost (1/12)
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1269, boot = -680, init = 686, finish = 1263
+15/08/27 20:22:58 INFO Executor: Finished task 3.0 in stage 2.0 (TID 19). 698 bytes result sent to driver
+iteration: 1
+iteration: 8
+iteration: 8
+iteration: 9
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 19) in 1282 ms on localhost (2/12)
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1265, boot = -611, init = 617, finish = 1259
+iteration: 10
+15/08/27 20:22:58 INFO Executor: Finished task 8.0 in stage 2.0 (TID 24). 698 bytes result sent to driver
+iteration: 9
+iteration: 6
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 8.0 in stage 2.0 (TID 24) in 1282 ms on localhost (3/12)
+iteration: 9
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1284, boot = -801, init = 808, finish = 1277
+iteration: 9
+iteration: 5
+15/08/27 20:22:58 INFO Executor: Finished task 4.0 in stage 2.0 (TID 20). 698 bytes result sent to driver
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 4.0 in stage 2.0 (TID 20) in 1297 ms on localhost (4/12)
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1279, boot = -681, init = 682, finish = 1278
+iteration: 10
+15/08/27 20:22:58 INFO Executor: Finished task 9.0 in stage 2.0 (TID 25). 698 bytes result sent to driver
+iteration: 10
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 9.0 in stage 2.0 (TID 25) in 1295 ms on localhost (5/12)
+iteration: 7
+iteration: 2
+iteration: 10
+iteration: 10
+iteration: 6
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1286, boot = -623, init = 627, finish = 1282
+iteration: 3
+15/08/27 20:22:58 INFO Executor: Finished task 1.0 in stage 2.0 (TID 17). 698 bytes result sent to driver
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1301, boot = -781, init = 794, finish = 1288
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 17) in 1314 ms on localhost (6/12)
+15/08/27 20:22:58 INFO Executor: Finished task 5.0 in stage 2.0 (TID 21). 698 bytes result sent to driver
+iteration: 8
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1303, boot = -768, init = 770, finish = 1301
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 5.0 in stage 2.0 (TID 21) in 1313 ms on localhost (7/12)
+15/08/27 20:22:58 INFO Executor: Finished task 10.0 in stage 2.0 (TID 26). 698 bytes result sent to driver
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 10.0 in stage 2.0 (TID 26) in 1311 ms on localhost (8/12)
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1299, boot = -666, init = 672, finish = 1293
+15/08/27 20:22:58 INFO Executor: Finished task 2.0 in stage 2.0 (TID 18). 698 bytes result sent to driver
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 18) in 1320 ms on localhost (9/12)
+iteration: 4
+iteration: 7
+iteration: 9
+iteration: 5
+iteration: 8
+iteration: 10
+iteration: 9
+iteration: 6
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1331, boot = -721, init = 725, finish = 1327
+15/08/27 20:22:58 INFO Executor: Finished task 7.0 in stage 2.0 (TID 23). 698 bytes result sent to driver
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 7.0 in stage 2.0 (TID 23) in 1341 ms on localhost (10/12)
+iteration: 10
+iteration: 7
+iteration: 8
+15/08/27 20:22:58 INFO PythonRDD: Times: total = 1343, boot = -732, init = 738, finish = 1337
+15/08/27 20:22:58 INFO Executor: Finished task 0.0 in stage 2.0 (TID 16). 698 bytes result sent to driver
+15/08/27 20:22:58 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 16) in 1357 ms on localhost (11/12)
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 512
+bh= 512
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+15/08/27 20:22:59 INFO PythonRDD: Times: total = 1741, boot = -750, init = 759, finish = 1732
+15/08/27 20:22:59 INFO Executor: Finished task 11.0 in stage 2.0 (TID 27). 698 bytes result sent to driver
+15/08/27 20:22:59 INFO TaskSetManager: Finished task 11.0 in stage 2.0 (TID 27) in 1748 ms on localhost (12/12)
+15/08/27 20:22:59 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+15/08/27 20:22:59 INFO DAGScheduler: Stage 2 (count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260) finished in 1.757 s
+15/08/27 20:22:59 INFO DAGScheduler: Job 2 finished: count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260, took 1.769572 s
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(304) called with curMem=119543, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 304.0 B, free 5.2 GB)
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(39011) called with curMem=119847, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 38.1 KB, free 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on localhost:36747 (size: 38.1 KB, free: 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerMaster: Updated info of block broadcast_7_piece0
+15/08/27 20:23:00 INFO SparkContext: Created broadcast 7 from broadcast at PythonRDD.scala:383
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(304) called with curMem=158858, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 304.0 B, free 5.2 GB)
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(93) called with curMem=159162, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 93.0 B, free 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on localhost:36747 (size: 93.0 B, free: 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerMaster: Updated info of block broadcast_8_piece0
+15/08/27 20:23:00 INFO SparkContext: Created broadcast 8 from broadcast at PythonRDD.scala:383
+15/08/27 20:23:00 INFO SparkContext: Starting job: collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259
+15/08/27 20:23:00 INFO DAGScheduler: Got job 3 (collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259) with 1 output partitions (allowLocal=false)
+15/08/27 20:23:00 INFO DAGScheduler: Final stage: Stage 3(collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259)
+15/08/27 20:23:00 INFO DAGScheduler: Parents of final stage: List()
+15/08/27 20:23:00 INFO DAGScheduler: Missing parents: List()
+15/08/27 20:23:00 INFO DAGScheduler: Submitting Stage 3 (PythonRDD[6] at collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259), which has no missing parents
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(7040) called with curMem=159255, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 6.9 KB, free 5.2 GB)
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(5570) called with curMem=166295, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 5.4 KB, free 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on localhost:36747 (size: 5.4 KB, free: 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerMaster: Updated info of block broadcast_9_piece0
+15/08/27 20:23:00 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:839
+15/08/27 20:23:00 INFO DAGScheduler: Submitting 1 missing tasks from Stage 3 (PythonRDD[6] at collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259)
+15/08/27 20:23:00 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 28, localhost, PROCESS_LOCAL, 1309 bytes)
+15/08/27 20:23:00 INFO Executor: Running task 0.0 in stage 3.0 (TID 28)
+15/08/27 20:23:00 ERROR Executor: Exception in task 0.0 in stage 3.0 (TID 28)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/worker.py", line 101, in main
+    process()
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/worker.py", line 96, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/serializers.py", line 236, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+  File "build/bdist.linux-x86_64/egg/lambdaimage/imgprocessing/deconvolution.py", line 38, in <lambda>
+  File "build/bdist.linux-x86_64/egg/lambdaimage/imgprocessing/decmethods/deconv_c.py", line 49, in deconv_func
+    libcd.deconv(image, y_nx, y_ny, y_nz, psf, h_nx, h_ny, h_nz, iter)
+ArgumentError: argument 1: <type 'exceptions.TypeError'>: array must have 2 dimension(s)
+
+	at org.apache.spark.api.python.PythonRDD$$anon$1.read(PythonRDD.scala:135)
+	at org.apache.spark.api.python.PythonRDD$$anon$1.<init>(PythonRDD.scala:176)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:94)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:277)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:244)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:61)
+	at org.apache.spark.scheduler.Task.run(Task.scala:64)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:203)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+15/08/27 20:23:00 WARN TaskSetManager: Lost task 0.0 in stage 3.0 (TID 28, localhost): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/worker.py", line 101, in main
+    process()
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/worker.py", line 96, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/home/wb/spark-1.3.0-bin-hadoop1/python/pyspark/serializers.py", line 236, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+  File "build/bdist.linux-x86_64/egg/lambdaimage/imgprocessing/deconvolution.py", line 38, in <lambda>
+  File "build/bdist.linux-x86_64/egg/lambdaimage/imgprocessing/decmethods/deconv_c.py", line 49, in deconv_func
+    libcd.deconv(image, y_nx, y_ny, y_nz, psf, h_nx, h_ny, h_nz, iter)
+ArgumentError: argument 1: <type 'exceptions.TypeError'>: array must have 2 dimension(s)
+
+	at org.apache.spark.api.python.PythonRDD$$anon$1.read(PythonRDD.scala:135)
+	at org.apache.spark.api.python.PythonRDD$$anon$1.<init>(PythonRDD.scala:176)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:94)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:277)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:244)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:61)
+	at org.apache.spark.scheduler.Task.run(Task.scala:64)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:203)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+15/08/27 20:23:00 ERROR TaskSetManager: Task 0 in stage 3.0 failed 1 times; aborting job
+15/08/27 20:23:00 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+15/08/27 20:23:00 INFO TaskSchedulerImpl: Cancelling stage 3
+15/08/27 20:23:00 INFO DAGScheduler: Job 3 failed: collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259, took 0.042475 s
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(304) called with curMem=171865, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 304.0 B, free 5.2 GB)
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(39011) called with curMem=172169, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 38.1 KB, free 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on localhost:36747 (size: 38.1 KB, free: 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerMaster: Updated info of block broadcast_10_piece0
+15/08/27 20:23:00 INFO SparkContext: Created broadcast 10 from broadcast at PythonRDD.scala:383
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(304) called with curMem=211180, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 304.0 B, free 5.2 GB)
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(93) called with curMem=211484, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 93.0 B, free 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on localhost:36747 (size: 93.0 B, free: 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerMaster: Updated info of block broadcast_11_piece0
+15/08/27 20:23:00 INFO SparkContext: Created broadcast 11 from broadcast at PythonRDD.scala:383
+15/08/27 20:23:00 INFO SparkContext: Starting job: collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259
+15/08/27 20:23:00 INFO DAGScheduler: Got job 4 (collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259) with 12 output partitions (allowLocal=false)
+15/08/27 20:23:00 INFO DAGScheduler: Final stage: Stage 4(collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259)
+15/08/27 20:23:00 INFO DAGScheduler: Parents of final stage: List()
+15/08/27 20:23:00 INFO DAGScheduler: Missing parents: List()
+15/08/27 20:23:00 INFO DAGScheduler: Submitting Stage 4 (PythonRDD[8] at collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259), which has no missing parents
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(7040) called with curMem=211577, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 6.9 KB, free 5.2 GB)
+15/08/27 20:23:00 INFO MemoryStore: ensureFreeSpace(5568) called with curMem=218617, maxMem=5556991426
+15/08/27 20:23:00 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 5.4 KB, free 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on localhost:36747 (size: 5.4 KB, free: 5.2 GB)
+15/08/27 20:23:00 INFO BlockManagerMaster: Updated info of block broadcast_12_piece0
+15/08/27 20:23:00 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:839
+15/08/27 20:23:00 INFO DAGScheduler: Submitting 12 missing tasks from Stage 4 (PythonRDD[8] at collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259)
+15/08/27 20:23:00 INFO TaskSchedulerImpl: Adding task set 4.0 with 12 tasks
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 29, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 30, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 31, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 32, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 4.0 in stage 4.0 (TID 33, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 5.0 in stage 4.0 (TID 34, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 6.0 in stage 4.0 (TID 35, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 7.0 in stage 4.0 (TID 36, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 8.0 in stage 4.0 (TID 37, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 9.0 in stage 4.0 (TID 38, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 10.0 in stage 4.0 (TID 39, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:00 INFO TaskSetManager: Starting task 11.0 in stage 4.0 (TID 40, localhost, PROCESS_LOCAL, 1990 bytes)
+15/08/27 20:23:00 INFO Executor: Running task 1.0 in stage 4.0 (TID 30)
+15/08/27 20:23:00 INFO Executor: Running task 0.0 in stage 4.0 (TID 29)
+15/08/27 20:23:00 INFO Executor: Running task 7.0 in stage 4.0 (TID 36)
+15/08/27 20:23:00 INFO Executor: Running task 4.0 in stage 4.0 (TID 33)
+15/08/27 20:23:00 INFO Executor: Running task 6.0 in stage 4.0 (TID 35)
+15/08/27 20:23:00 INFO Executor: Running task 2.0 in stage 4.0 (TID 31)
+15/08/27 20:23:00 INFO Executor: Running task 11.0 in stage 4.0 (TID 40)
+15/08/27 20:23:00 INFO Executor: Running task 3.0 in stage 4.0 (TID 32)
+15/08/27 20:23:00 INFO Executor: Running task 9.0 in stage 4.0 (TID 38)
+15/08/27 20:23:00 INFO Executor: Running task 10.0 in stage 4.0 (TID 39)
+15/08/27 20:23:00 INFO Executor: Running task 8.0 in stage 4.0 (TID 37)
+15/08/27 20:23:00 INFO Executor: Running task 5.0 in stage 4.0 (TID 34)
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 3
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 1
+iteration: 3
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 6
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 5
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 2
+iteration: 5
+iteration: 3
+iteration: 7
+iteration: 5
+iteration: 2
+iteration: 3
+iteration: 6
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 3
+iteration: 4
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 5
+iteration: 4
+iteration: 3
+iteration: 7
+iteration: 5
+iteration: 5
+iteration: 4
+iteration: 9
+iteration: 8
+iteration: 5
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 5
+iteration: 10
+iteration: 9
+iteration: 8
+iteration: 6
+iteration: 7
+iteration: 9
+iteration: 5
+iteration: 7
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 9
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256iteration: 10
+
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 10
+iteration: 8
+iteration: 9
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 7
+iteration: 9
+iteration: 7
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 9
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 10
+iteration: 8
+iteration: 10
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256iteration: 9
+
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+inv deconv from 
+kw= 100
+kh= 100
+kd= 1
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 1
+iteration: 10
+iteration: 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+iteration: 10
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 3
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 1
+iteration: 4
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 5
+iteration: 5
+iteration: 2
+iteration: 4
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 2
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 3
+iteration: 5
+iteration: 3
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 7
+iteration: 7
+iteration: 7
+iteration: 2
+iteration: 6
+iteration: 4
+iteration: 4
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 7
+iteration: 8
+iteration: 8
+iteration: 7
+iteration: 3
+iteration: 5
+iteration: 8
+iteration: 8
+iteration: 9
+iteration: 8
+iteration: 10
+iteration: 5
+iteration: 9
+iteration: 9
+iteration: 8
+iteration: 4
+iteration: 6
+iteration: 9
+iteration: 9
+iteration: 10
+iteration: 9
+iteration: 10
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 7
+iteration: 10
+iteration: 9
+iteration: 10
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 8
+inv deconv from inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+
+bw= kw= 100
+kh= 100
+kd= 1
+256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 10
+iteration: 7
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 1
+iteration: 8
+iteration: 9
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 10
+iteration: 1
+iteration: 1
+iteration: 10
+iteration: 2
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 2
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 1
+iteration: 3
+iteration: 4
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 4
+iteration: 1
+iteration: 4
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 5
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 3
+iteration: 1
+iteration: 3
+iteration: 5
+iteration: 2
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 1
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 3
+iteration: 6
+iteration: 3
+iteration: 2
+iteration: 5
+iteration: 7
+iteration: 5
+iteration: 4
+iteration: 7
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 3
+iteration: 1
+iteration: 8
+iteration: 2
+iteration: 5
+iteration: 6
+iteration: 6
+iteration: 8
+iteration: 2
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 3
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 7
+iteration: 3
+iteration: 5
+iteration: 8
+iteration: 2
+iteration: 4
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 10
+iteration: 8
+iteration: 4
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 9
+iteration: 5
+iteration: 3
+iteration: 10
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 6
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 10
+iteration: 6
+iteration: 10
+iteration: 7
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 5
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1iteration: 5
+
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 8
+iteration: 6
+iteration: 7
+iteration: 1
+iteration: 6
+iteration: 10
+iteration: 9
+iteration: 1
+iteration: 7
+iteration: 8
+iteration: 7
+iteration: 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 10
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 1
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 2
+iteration: 9
+iteration: 2
+iteration: 10
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 10
+iteration: 10
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 3
+iteration: 4
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 4
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 3
+iteration: 1
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 1
+iteration: 6
+iteration: 4
+iteration: 6
+iteration: 3
+iteration: 1
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 1
+iteration: 2
+iteration: 5
+iteration: 7
+iteration: 1
+iteration: 4
+iteration: 7
+iteration: 8
+iteration: 3
+iteration: 6
+iteration: 8
+iteration: 2
+iteration: 8
+iteration: 5
+iteration: 5
+iteration: 9
+iteration: 4
+iteration: 8
+iteration: 9
+iteration: 7
+iteration: 2
+iteration: 6
+iteration: 3
+iteration: 6
+iteration: 9
+iteration: 10
+iteration: 8
+iteration: 2
+iteration: 2
+iteration: 9
+iteration: 10
+iteration: 3
+iteration: 7
+iteration: 4
+iteration: 7
+iteration: 9
+iteration: 3
+iteration: 10
+iteration: 10
+iteration: 4
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 8
+iteration: 10
+iteration: 4
+iteration: 9
+iteration: 5
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 4
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= iteration: 6
+1
+iteration: 9
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 10
+iteration: 6
+iteration: 7
+iteration: 10
+iteration: 6
+iteration: 7
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 5
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 1
+iteration: 7
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 7
+iteration: 6
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 1
+iteration: 8
+iteration: 10
+iteration: 9
+iteration: 10
+iteration: 7
+iteration: 2
+iteration: 9
+iteration: 2
+iteration: 2
+iteration: 10
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 2
+iteration: 9
+iteration: 4
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 3
+iteration: 10
+iteration: 1
+iteration: 2
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 1
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 5
+iteration: 5
+iteration: 1
+iteration: 4
+iteration: 6
+iteration: 5
+iteration: 2
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 2
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 6
+iteration: 3
+iteration: 1
+iteration: 8
+iteration: 1
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 2
+iteration: 8
+iteration: 4
+iteration: 7
+iteration: 9
+iteration: 9
+iteration: 8
+iteration: 3
+iteration: 7
+iteration: 9
+iteration: 5
+iteration: 8
+iteration: 3
+iteration: 10
+iteration: 10
+iteration: 4
+iteration: 2
+iteration: 9
+iteration: 8
+iteration: 1
+iteration: 2
+iteration: 10
+iteration: 6
+iteration: 4
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 3
+iteration: 9
+iteration: 5
+iteration: 7
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 6
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+iteration: 8
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 7
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 9
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 3
+iteration: 1
+iteration: 4
+iteration: 8
+iteration: 10
+iteration: 6
+iteration: 7
+iteration: 5
+iteration: 1
+iteration: 7
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 9
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 8
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 8
+iteration: 10
+iteration: 5
+iteration: 6
+iteration: 9
+iteration: 9
+iteration: 3
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 7
+iteration: 10
+iteration: 2
+iteration: 6
+iteration: 10
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 8
+iteration: 4
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+inv deconv from 
+bw= 256
+iteration: 4
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 9
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 8
+iteration: 2
+iteration: 10
+iteration: 5
+iteration: 5
+iteration: 5
+iteration: 2
+iteration: 6
+iteration: 4
+iteration: 9
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 3
+iteration: 5
+iteration: 10
+iteration: 1
+iteration: 4
+iteration: 8
+iteration: 7
+iteration: 4
+iteration: 7
+iteration: 6
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 9
+iteration: 8
+iteration: 5
+iteration: 8
+iteration: 7
+iteration: 7
+iteration: 10
+iteration: 6
+iteration: 9
+iteration: 6
+iteration: 9
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 7
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 10
+iteration: 7
+iteration: 10
+iteration: 1
+iteration: 9
+iteration: 9
+iteration: 8
+iteration: 2
+iteration: 8
+inv deconv from 
+bw= 256iteration: 10
+
+bh= 256
+bd= 1
+inv deconv from 
+kw= 100
+kh= 100
+kd= 1
+bw= 256
+bh= 256
+bd= 1
+iteration: 10
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 3
+iteration: 9
+iteration: 2
+iteration: 2
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100iteration: 2
+
+kh= 100iteration: 10
+
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 3
+iteration: 10
+iteration: 3
+iteration: 3
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 3
+iteration: 4
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 4
+iteration: 1
+iteration: 5
+iteration: 5
+iteration: 5
+iteration: 7
+iteration: 2
+iteration: 5
+iteration: 1
+iteration: 6
+iteration: 1
+iteration: 6
+iteration: 6
+iteration: 1
+iteration: 8
+iteration: 6
+iteration: 2
+iteration: 7
+iteration: 7
+iteration: 7
+iteration: 1
+iteration: 9
+iteration: 3
+iteration: 7
+iteration: 3
+iteration: 8
+iteration: 2
+iteration: 8
+iteration: 8
+iteration: 2
+iteration: 10
+iteration: 4
+iteration: 4
+iteration: 8
+iteration: 2
+iteration: 9
+iteration: 3
+iteration: 9
+iteration: 3
+iteration: 9
+iteration: 2
+inv deconv from 
+bw= 256
+iteration: 3
+bh= 256
+bd= 1
+kw= 100iteration: 5
+
+kh= 100
+kd= 1
+iteration: 5
+iteration: 9
+iteration: 10
+iteration: 4
+iteration: 4
+iteration: 10
+iteration: 10
+iteration: 1
+iteration: 3
+iteration: 6
+iteration: 4
+iteration: 10
+iteration: 5
+iteration: 5
+iteration: 6
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= iteration: 7
+1
+iteration: 4
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 2
+iteration: 8
+iteration: 1
+iteration: 9
+iteration: 5
+iteration: 8
+iteration: 1
+iteration: 7
+iteration: 7
+iteration: 10
+iteration: 3
+iteration: 9
+iteration: 6
+iteration: 1
+iteration: 1
+iteration: 8
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 8
+iteration: 2
+iteration: 9
+iteration: 4
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 10
+iteration: 10
+iteration: 2
+iteration: 10
+iteration: 10
+iteration: 3
+iteration: 5
+iteration: 1
+iteration: 4
+iteration: 1
+iteration: 4
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 6
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+iteration: 4
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 5
+iteration: 6
+iteration: 6
+iteration: 2
+iteration: 2
+iteration: 8
+iteration: 7
+iteration: 7
+iteration: 6
+iteration: 1
+iteration: 4
+iteration: 1
+iteration: 9
+iteration: 3
+iteration: 3
+iteration: 8
+iteration: 7
+iteration: 1
+iteration: 5
+iteration: 8
+iteration: 1
+iteration: 10
+iteration: 4
+iteration: 9
+iteration: 8
+iteration: 6
+iteration: 1
+iteration: 9
+iteration: 2
+iteration: 5
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 7
+iteration: 2
+iteration: 4
+iteration: 10
+iteration: 3
+iteration: 6
+iteration: 2
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 5
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 2
+iteration: 10
+iteration: 4
+iteration: 7
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 9
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 8
+iteration: 6
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 9
+iteration: 4
+iteration: 10
+iteration: 1
+iteration: 7
+iteration: 6
+iteration: 5
+iteration: 2
+iteration: 7
+iteration: 1
+iteration: 10
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 7
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 6
+iteration: 3
+iteration: 8
+iteration: 6
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 7
+iteration: 4
+iteration: 2
+iteration: 7
+iteration: 9
+iteration: 9
+iteration: 8
+iteration: 2
+iteration: 3
+iteration: 5
+iteration: 8
+iteration: 10
+iteration: 1
+iteration: 9
+iteration: 10
+iteration: 9
+iteration: 3
+iteration: 4
+iteration: 9
+iteration: 1
+iteration: 2
+iteration: 10
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 469, boot = -1891, init = 1896, finish = 464
+iteration: 10
+iteration: 1
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 471, boot = -1888, init = 1895, finish = 464
+iteration: 2
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 472, boot = -1898, init = 1908, finish = 462
+iteration: 5
+iteration: 6
+iteration: 3
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 2
+iteration: 3
+iteration: 7
+15/08/27 20:23:01 INFO Executor: Finished task 2.0 in stage 4.0 (TID 31). 2109319 bytes result sent to driver
+iteration: 4
+iteration: 6
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 480, boot = -1886, init = 1901, finish = 465
+iteration: 4
+iteration: 8
+iteration: 3
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 31) in 493 ms on localhost (1/12)
+iteration: 5
+iteration: 5
+iteration: 1
+15/08/27 20:23:01 INFO Executor: Finished task 7.0 in stage 4.0 (TID 36). 2109319 bytes result sent to driver
+iteration: 7
+iteration: 8
+iteration: 4
+iteration: 9
+15/08/27 20:23:01 INFO Executor: Finished task 10.0 in stage 4.0 (TID 39). 2109319 bytes result sent to driver
+iteration: 6
+iteration: 6
+iteration: 5
+15/08/27 20:23:01 INFO Executor: Finished task 5.0 in stage 4.0 (TID 34). 2109319 bytes result sent to driver
+iteration: 10
+iteration: 8
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 7.0 in stage 4.0 (TID 36) in 496 ms on localhost (2/12)
+iteration: 2
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 10.0 in stage 4.0 (TID 39) in 496 ms on localhost (3/12)
+iteration: 7
+iteration: 6
+iteration: 9
+iteration: 9
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 497, boot = -1904, init = 1915, finish = 486
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 5.0 in stage 4.0 (TID 34) in 504 ms on localhost (4/12)
+iteration: 2
+iteration: 3
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 10
+iteration: 4
+iteration: 3
+iteration: 7
+iteration: 9
+15/08/27 20:23:01 INFO Executor: Finished task 4.0 in stage 4.0 (TID 33). 2109319 bytes result sent to driver
+iteration: 8
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 502, boot = -1856, init = 1865, finish = 493
+iteration: 8
+iteration: 10
+iteration: 9
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 4.0 in stage 4.0 (TID 33) in 514 ms on localhost (5/12)
+iteration: 5
+iteration: 4
+iteration: 9
+15/08/27 20:23:01 INFO Executor: Finished task 8.0 in stage 4.0 (TID 37). 2109319 bytes result sent to driver
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 511, boot = -1911, init = 1913, finish = 509
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 5
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 513, boot = -1851, init = 1867, finish = 497
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 8.0 in stage 4.0 (TID 37) in 520 ms on localhost (6/12)
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 511, boot = -1451, init = 1463, finish = 499
+iteration: 6
+iteration: 6
+15/08/27 20:23:01 INFO Executor: Finished task 1.0 in stage 4.0 (TID 30). 2109319 bytes result sent to driver
+iteration: 7
+15/08/27 20:23:01 INFO Executor: Finished task 6.0 in stage 4.0 (TID 35). 2109319 bytes result sent to driver
+15/08/27 20:23:01 INFO Executor: Finished task 9.0 in stage 4.0 (TID 38). 2109319 bytes result sent to driver
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 30) in 535 ms on localhost (7/12)
+iteration: 7
+iteration: 8
+iteration: 1
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 6.0 in stage 4.0 (TID 35) in 536 ms on localhost (8/12)
+iteration: 8
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 9.0 in stage 4.0 (TID 38) in 536 ms on localhost (9/12)
+iteration: 9
+iteration: 9
+iteration: 10
+iteration: 2
+iteration: 10
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 538, boot = -1887, init = 1894, finish = 531
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+15/08/27 20:23:01 INFO Executor: Finished task 0.0 in stage 4.0 (TID 29). 2109319 bytes result sent to driver
+iteration: 5
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 29) in 558 ms on localhost (10/12)
+iteration: 6
+iteration: 7
+iteration: 1
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 2
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 1
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 2
+iteration: 10
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 1
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 2
+iteration: 10
+iteration: 3
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 597, boot = 2, init = 139, finish = 456
+iteration: 4
+iteration: 5
+15/08/27 20:23:01 INFO Executor: Finished task 3.0 in stage 4.0 (TID 32). 2109319 bytes result sent to driver
+iteration: 6
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 32) in 621 ms on localhost (11/12)
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 668, boot = -1893, init = 1900, finish = 661
+15/08/27 20:23:01 INFO Executor: Finished task 11.0 in stage 4.0 (TID 40). 3163635 bytes result sent to driver
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 11.0 in stage 4.0 (TID 40) in 682 ms on localhost (12/12)
+15/08/27 20:23:01 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+15/08/27 20:23:01 INFO DAGScheduler: Stage 4 (collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259) finished in 0.691 s
+15/08/27 20:23:01 INFO DAGScheduler: Job 4 finished: collect at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:259, took 0.703261 s
+15/08/27 20:23:01 INFO SparkContext: Starting job: count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260
+15/08/27 20:23:01 INFO DAGScheduler: Got job 5 (count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260) with 12 output partitions (allowLocal=false)
+15/08/27 20:23:01 INFO DAGScheduler: Final stage: Stage 5(count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260)
+15/08/27 20:23:01 INFO DAGScheduler: Parents of final stage: List()
+15/08/27 20:23:01 INFO DAGScheduler: Missing parents: List()
+15/08/27 20:23:01 INFO DAGScheduler: Submitting Stage 5 (PythonRDD[9] at count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260), which has no missing parents
+15/08/27 20:23:01 INFO MemoryStore: ensureFreeSpace(8368) called with curMem=224185, maxMem=5556991426
+15/08/27 20:23:01 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 8.2 KB, free 5.2 GB)
+15/08/27 20:23:01 INFO MemoryStore: ensureFreeSpace(6561) called with curMem=232553, maxMem=5556991426
+15/08/27 20:23:01 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 6.4 KB, free 5.2 GB)
+15/08/27 20:23:01 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on localhost:36747 (size: 6.4 KB, free: 5.2 GB)
+15/08/27 20:23:01 INFO BlockManagerMaster: Updated info of block broadcast_13_piece0
+15/08/27 20:23:01 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:839
+15/08/27 20:23:01 INFO DAGScheduler: Submitting 12 missing tasks from Stage 5 (PythonRDD[9] at count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260)
+15/08/27 20:23:01 INFO TaskSchedulerImpl: Adding task set 5.0 with 12 tasks
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 41, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 42, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 43, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 3.0 in stage 5.0 (TID 44, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 4.0 in stage 5.0 (TID 45, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 5.0 in stage 5.0 (TID 46, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 6.0 in stage 5.0 (TID 47, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 7.0 in stage 5.0 (TID 48, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 8.0 in stage 5.0 (TID 49, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 9.0 in stage 5.0 (TID 50, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 10.0 in stage 5.0 (TID 51, localhost, PROCESS_LOCAL, 1736 bytes)
+15/08/27 20:23:01 INFO TaskSetManager: Starting task 11.0 in stage 5.0 (TID 52, localhost, PROCESS_LOCAL, 1990 bytes)
+15/08/27 20:23:01 INFO Executor: Running task 3.0 in stage 5.0 (TID 44)
+15/08/27 20:23:01 INFO Executor: Running task 2.0 in stage 5.0 (TID 43)
+15/08/27 20:23:01 INFO Executor: Running task 5.0 in stage 5.0 (TID 46)
+15/08/27 20:23:01 INFO Executor: Running task 8.0 in stage 5.0 (TID 49)
+15/08/27 20:23:01 INFO Executor: Running task 9.0 in stage 5.0 (TID 50)
+15/08/27 20:23:01 INFO Executor: Running task 7.0 in stage 5.0 (TID 48)
+15/08/27 20:23:01 INFO Executor: Running task 4.0 in stage 5.0 (TID 45)
+15/08/27 20:23:01 INFO Executor: Running task 0.0 in stage 5.0 (TID 41)
+15/08/27 20:23:01 INFO Executor: Running task 6.0 in stage 5.0 (TID 47)
+15/08/27 20:23:01 INFO Executor: Running task 10.0 in stage 5.0 (TID 51)
+15/08/27 20:23:01 INFO Executor: Running task 11.0 in stage 5.0 (TID 52)
+15/08/27 20:23:01 INFO Executor: Running task 1.0 in stage 5.0 (TID 42)
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1iteration: 1
+
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 3
+iteration: 1
+iteration: 1
+iteration: 3
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 4
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 1
+iteration: 5
+iteration: 2
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 4
+iteration: 6
+iteration: 3
+iteration: 6
+iteration: 5
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 3
+iteration: 7
+iteration: 5
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 4
+iteration: 6
+iteration: 5
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 8
+iteration: 6
+iteration: 3
+iteration: 8
+iteration: 7
+iteration: 7
+iteration: 5
+iteration: 7
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 4
+iteration: 6
+iteration: 9
+iteration: 9
+iteration: 8
+iteration: 8
+iteration: 6
+iteration: 8
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 5
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 9
+iteration: 7
+iteration: 9
+iteration: 9
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 8
+iteration: 6
+iteration: 9
+inv deconv from inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+
+bw= kw= 256
+bh= 256
+bd= 1
+100iteration: 10
+
+kw= 100
+kh= 100
+kd= 1
+kh= 100
+kd= 1
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 8
+iteration: 9
+iteration: 7
+iteration: 9
+iteration: 7
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 9
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 10
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 1
+iteration: 3
+iteration: 3
+iteration: 1
+iteration: 4
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 1
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 5
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 4
+iteration: 2
+iteration: 6
+iteration: 2
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 4
+iteration: 6
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 3
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 2
+iteration: 7
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 6
+iteration: 6
+iteration: 8
+iteration: 8
+iteration: 3
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 5
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 7
+iteration: 9
+iteration: 9
+iteration: 9
+iteration: 10
+iteration: 6
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 8
+iteration: 4
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 10
+iteration: 7
+iteration: 8
+iteration: 9
+inv deconv from iteration: 7
+
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 9
+iteration: 9
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+inv deconv from kw= 100
+kh= 100
+kd= 1
+
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= iteration: 8
+100
+kh= iteration: 10
+100
+kd= 1
+iteration: 9
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 10
+iteration: 6
+iteration: 9
+iteration: 10
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+
+bw= kw= 100
+kh= 100
+kd= 1
+256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 10
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 8
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 9
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 10
+iteration: 2
+iteration: 3
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 4
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 2
+iteration: 5
+iteration: 3
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 2
+iteration: 6
+iteration: 5
+iteration: 3
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 3
+iteration: 1
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 7
+iteration: 5
+iteration: 7
+iteration: 4
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 7
+iteration: 3
+iteration: 8
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 8
+iteration: 5
+iteration: 8
+iteration: 8
+iteration: 6
+iteration: 4
+iteration: 8
+iteration: 7
+iteration: 6
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 9
+iteration: 6
+iteration: 9
+iteration: 7
+iteration: 9
+iteration: 5
+iteration: 10
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 10
+iteration: 9
+iteration: 7
+iteration: 8
+iteration: 10
+iteration: 10
+iteration: 9
+iteration: 6
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1iteration: 10
+
+iteration: 9
+iteration: 2
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 7
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 1
+iteration: 1
+iteration: 1
+iteration: 4
+iteration: 9
+iteration: 1
+iteration: 2
+iteration: 5
+iteration: 1
+iteration: 10
+iteration: 2
+iteration: 1
+iteration: 6
+iteration: 1
+iteration: 1
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 7
+iteration: 3
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 8
+iteration: 4
+iteration: 3
+iteration: 4
+iteration: 2
+iteration: 4
+iteration: 9
+iteration: 4
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 10
+iteration: 3
+iteration: 5
+iteration: 5
+iteration: 2
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 6
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 3
+iteration: 4
+iteration: 6
+iteration: 5
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 7
+iteration: 7
+iteration: 6
+iteration: 6
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 8
+iteration: 7
+iteration: 8
+iteration: 8
+iteration: 7
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 9
+iteration: 8
+iteration: 7
+iteration: 9
+iteration: 9
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 8
+iteration: 10
+iteration: 1
+iteration: 9
+iteration: 10
+iteration: 8
+iteration: 10
+iteration: 7
+iteration: 9
+iteration: 8
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 8
+iteration: 10
+inv deconv from iteration: 8
+
+bw= 256
+bh= 256
+bd= 1
+iteration: 9
+kw= inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+100
+kh= kw= 100
+kh= 100
+kd= 1
+100
+kd= 1
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 4
+iteration: 1
+iteration: 10
+iteration: 1
+iteration: 1
+iteration: 10
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 7
+iteration: 2
+iteration: 3
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 1
+iteration: 1
+iteration: 8
+iteration: 4
+iteration: 2
+iteration: 3
+iteration: 3
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 1
+iteration: 3
+iteration: 9
+iteration: 3
+iteration: 4
+iteration: 4
+iteration: 5
+iteration: 3
+iteration: 5
+iteration: 2
+iteration: 4
+iteration: 2
+iteration: 2
+iteration: 10
+iteration: 4
+iteration: 5
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 6
+iteration: 5
+iteration: 2
+iteration: 3
+inv deconv from 
+bw= 256
+bh= iteration: 5
+256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 3
+iteration: 5
+iteration: 3
+iteration: 3
+iteration: 7
+iteration: 4
+iteration: 6
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 4
+iteration: 4
+iteration: 8
+iteration: 6
+iteration: 4
+iteration: 5
+iteration: 8
+iteration: 7
+iteration: 7
+iteration: 8
+iteration: 5
+iteration: 8
+iteration: 5
+iteration: 9
+iteration: 7
+iteration: 5
+iteration: 6
+iteration: 9
+iteration: 8
+iteration: 8
+iteration: 9
+iteration: 9
+iteration: 6
+iteration: 6
+iteration: 10
+iteration: 8
+iteration: 6
+iteration: 7
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 10
+iteration: 10
+iteration: 7
+iteration: 7
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= iteration: 9
+100
+kh= 100
+kd= 1
+iteration: 7
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1iteration: 10
+
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 9
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 10
+iteration: 1
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 2
+iteration: 2
+iteration: 3
+iteration: 2
+iteration: 1
+iteration: 2
+iteration: 1
+iteration: 3
+iteration: 4
+iteration: 1
+iteration: 4
+iteration: 3
+iteration: 3
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 4
+iteration: 5
+iteration: 2
+iteration: 6
+iteration: 3
+iteration: 1
+iteration: 4
+iteration: 2
+iteration: 5
+iteration: 4
+iteration: 6
+iteration: 5
+iteration: 3
+iteration: 7
+iteration: 2
+iteration: 4
+iteration: 5
+iteration: 3
+iteration: 6
+iteration: 6
+iteration: 5
+iteration: 7
+iteration: 8
+iteration: 2
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 2
+iteration: 4
+iteration: 7
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 9
+iteration: 4
+iteration: 6
+iteration: 3
+iteration: 5
+iteration: 8
+iteration: 8
+iteration: 7
+iteration: 5
+iteration: 10
+iteration: 8
+iteration: 7
+iteration: 3
+iteration: 5
+iteration: 7
+iteration: 4
+iteration: 6
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 5
+iteration: 8
+iteration: 10
+iteration: 9
+iteration: 9
+iteration: 7
+iteration: 10
+iteration: 9
+iteration: 4
+iteration: 7
+iteration: 6
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+iteration: 10
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 5
+iteration: 9
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 9
+iteration: 1
+iteration: 10
+inv deconv from iteration: 1
+
+bw= 256
+bh= 256
+bd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 1
+iteration: 7
+iteration: 7
+iteration: 1
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 8
+iteration: 2
+iteration: 1
+iteration: 3
+iteration: 1
+iteration: 9
+iteration: 1
+iteration: 9
+iteration: 1
+iteration: 3
+iteration: 2
+iteration: 4
+iteration: 10
+iteration: 2
+iteration: 4
+iteration: 1
+iteration: 3
+iteration: 10
+iteration: 5
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 5
+iteration: 2
+iteration: 4
+iteration: 6
+iteration: 2
+iteration: 3
+inv deconv from 
+bw= 256
+bh= 256
+bd= inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+1
+kw= 100kw= 100
+kh= 100
+kd= 1
+
+kh= 100
+kd= 1
+iteration: 4
+iteration: 2
+iteration: 6
+iteration: 3
+iteration: 5
+iteration: 4
+iteration: 5
+iteration: 2
+iteration: 7
+iteration: 3
+iteration: 7
+iteration: 4
+iteration: 3
+iteration: 6
+iteration: 2
+iteration: 5
+iteration: 8
+iteration: 4
+iteration: 3
+iteration: 8
+iteration: 5
+iteration: 4
+iteration: 3
+iteration: 7
+iteration: 1
+iteration: 9
+iteration: 6
+iteration: 9
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 5
+iteration: 6
+iteration: 4
+iteration: 8
+iteration: 7
+iteration: 10
+iteration: 10
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 7
+iteration: 5
+iteration: 6
+iteration: 8
+iteration: 9
+iteration: 1
+iteration: 8
+iteration: 6
+iteration: 7
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 6
+iteration: 7
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 9
+iteration: 7
+iteration: 8
+iteration: 2
+iteration: 7
+iteration: 10
+iteration: 10
+iteration: 9
+iteration: 10
+iteration: 8
+iteration: 9
+iteration: 3
+iteration: 8
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= iteration: 10
+100
+kh= 100
+kd= 1
+iteration: 2
+iteration: 1
+iteration: 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 4
+iteration: 10
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+inv deconv from 
+bw= 256
+iteration: 10
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 3
+iteration: 7
+iteration: 1
+iteration: 3
+iteration: 2
+iteration: 1
+iteration: 4
+iteration: 1
+iteration: 8
+iteration: 4
+iteration: 3
+iteration: 5
+iteration: 9
+iteration: 1
+iteration: 5
+iteration: 2
+iteration: 1
+iteration: 1
+iteration: 6
+iteration: 1
+iteration: 1
+iteration: 10
+iteration: 2
+iteration: 3
+iteration: 2
+iteration: 7
+iteration: 3
+iteration: 4
+iteration: 4
+iteration: 3
+iteration: 2
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 8
+iteration: 6
+iteration: 4
+iteration: 2
+iteration: 2
+iteration: 2
+iteration: 4
+iteration: 5
+iteration: 5
+iteration: 3
+iteration: 7
+iteration: 9
+iteration: 3
+iteration: 5
+iteration: 3
+iteration: 5
+iteration: 3
+iteration: 6
+iteration: 8
+iteration: 6
+iteration: 4
+iteration: 10
+iteration: 2
+iteration: 6
+iteration: 4
+iteration: 4
+iteration: 6
+iteration: 9
+iteration: 4
+iteration: 7
+iteration: 7
+iteration: 5
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+iteration: 3
+kd= 1
+iteration: 7
+iteration: 5
+iteration: 5
+iteration: 7
+iteration: 10
+iteration: 5
+iteration: 8
+iteration: 8
+iteration: 6
+iteration: 4
+iteration: 8
+iteration: 8
+iteration: 6
+iteration: 6
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 450, boot = -252, init = 253, finish = 449
+iteration: 6
+iteration: 9
+15/08/27 20:23:01 INFO Executor: Finished task 5.0 in stage 5.0 (TID 46). 698 bytes result sent to driver
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 5.0 in stage 5.0 (TID 46) in 458 ms on localhost (1/12)
+iteration: 5
+iteration: 9
+iteration: 7
+iteration: 9
+iteration: 7
+iteration: 7
+iteration: 9
+iteration: 10
+iteration: 1
+iteration: 7
+iteration: 6
+iteration: 8
+iteration: 10
+iteration: 1
+iteration: 10
+iteration: 10
+iteration: 8
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 456, boot = -223, init = 236, finish = 443
+15/08/27 20:23:01 INFO Executor: Finished task 3.0 in stage 5.0 (TID 44). 698 bytes result sent to driver
+iteration: 8
+iteration: 9
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 445, boot = -75, init = 85, finish = 435
+15/08/27 20:23:01 INFO Executor: Finished task 10.0 in stage 5.0 (TID 51). 698 bytes result sent to driver
+iteration: 7
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 3.0 in stage 5.0 (TID 44) in 467 ms on localhost (2/12)
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 10.0 in stage 5.0 (TID 51) in 464 ms on localhost (3/12)
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 451, boot = -220, init = 224, finish = 447
+15/08/27 20:23:01 INFO Executor: Finished task 2.0 in stage 5.0 (TID 43). 698 bytes result sent to driver
+iteration: 9
+iteration: 9
+iteration: 10
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 43) in 471 ms on localhost (4/12)
+iteration: 8
+iteration: 2
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 464, boot = -241, init = 254, finish = 451
+15/08/27 20:23:01 INFO Executor: Finished task 9.0 in stage 5.0 (TID 50). 698 bytes result sent to driver
+iteration: 10
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 9.0 in stage 5.0 (TID 50) in 471 ms on localhost (5/12)
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 9
+iteration: 3
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 458, boot = -220, init = 231, finish = 447
+iteration: 8
+15/08/27 20:23:01 INFO Executor: Finished task 7.0 in stage 5.0 (TID 48). 698 bytes result sent to driver
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 7.0 in stage 5.0 (TID 48) in 477 ms on localhost (6/12)
+kw= 100
+kh= 100
+kd= 1
+iteration: 10
+iteration: 4
+iteration: 9
+iteration: 5
+iteration: 10
+iteration: 2
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 477, boot = -255, init = 265, finish = 467
+15/08/27 20:23:01 INFO Executor: Finished task 8.0 in stage 5.0 (TID 49). 698 bytes result sent to driver
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 8.0 in stage 5.0 (TID 49) in 485 ms on localhost (7/12)
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 6
+iteration: 3
+iteration: 4
+iteration: 7
+iteration: 5
+iteration: 8
+iteration: 1
+iteration: 1
+iteration: 6
+iteration: 1
+iteration: 9
+iteration: 7
+iteration: 10
+iteration: 8
+iteration: 2
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 495, boot = -240, init = 250, finish = 485
+15/08/27 20:23:01 INFO Executor: Finished task 1.0 in stage 5.0 (TID 42). 698 bytes result sent to driver
+iteration: 9
+iteration: 2
+iteration: 2
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 42) in 508 ms on localhost (8/12)
+iteration: 3
+iteration: 10
+iteration: 3
+iteration: 3
+iteration: 4
+iteration: 4
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 493, boot = -137, init = 141, finish = 489
+15/08/27 20:23:01 INFO Executor: Finished task 4.0 in stage 5.0 (TID 45). 698 bytes result sent to driver
+iteration: 5
+iteration: 4
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 4.0 in stage 5.0 (TID 45) in 513 ms on localhost (9/12)
+iteration: 5
+iteration: 6
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 8
+iteration: 9
+iteration: 10
+iteration: 9
+iteration: 10
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 510, boot = -201, init = 207, finish = 504
+15/08/27 20:23:01 INFO Executor: Finished task 0.0 in stage 5.0 (TID 41). 698 bytes result sent to driver
+iteration: 10
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 41) in 533 ms on localhost (10/12)
+15/08/27 20:23:01 INFO PythonRDD: Times: total = 513, boot = -224, init = 230, finish = 507
+15/08/27 20:23:01 INFO Executor: Finished task 6.0 in stage 5.0 (TID 47). 698 bytes result sent to driver
+15/08/27 20:23:01 INFO TaskSetManager: Finished task 6.0 in stage 5.0 (TID 47) in 531 ms on localhost (11/12)
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+inv deconv from 
+bw= 256
+bh= 256
+bd= 1
+kw= 100
+kh= 100
+kd= 1
+iteration: 1
+iteration: 2
+iteration: 3
+iteration: 4
+iteration: 5
+iteration: 6
+iteration: 7
+iteration: 8
+iteration: 9
+iteration: 10
+15/08/27 20:23:02 INFO PythonRDD: Times: total = 650, boot = -227, init = 235, finish = 642
+15/08/27 20:23:02 INFO Executor: Finished task 11.0 in stage 5.0 (TID 52). 698 bytes result sent to driver
+15/08/27 20:23:02 INFO TaskSetManager: Finished task 11.0 in stage 5.0 (TID 52) in 665 ms on localhost (12/12)
+15/08/27 20:23:02 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+15/08/27 20:23:02 INFO DAGScheduler: Stage 5 (count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260) finished in 0.672 s
+15/08/27 20:23:02 INFO DAGScheduler: Job 5 finished: count at build/bdist.linux-x86_64/egg/lambdaimage/rdds/images.py:260, took 0.684565 s
+['/home/wb/data/deconv/', '/home/wb/data/deconv/512x512x100', '/home/wb/data/deconv/256x256x100', '/home/wb/data/deconv/test']
+inlist
+['/home/wb/data/deconv//*.tif', '/home/wb/data/deconv/512x512x100/*.tif', '/home/wb/data/deconv/256x256x100/*.tif', '/home/wb/data/deconv/test/*.tif']
+outlist
+['/home/wb/data/local/', '/home/wb/data/local/512x512x100', '/home/wb/data/local/256x256x100', '/home/wb/data/local/test']
+error  /home/wb/data/deconv//*.tif
+error  /home/wb/data/deconv/test/*.tif

@@ -4,6 +4,6 @@ libdeconv.so : deconv.o
 deconv.o : deconv.c
 	gcc -c -fPIC deconv.c -o deconv.o
 
-m.PHONY : clean
+.PHONY : clean
 clean :
 	rm -vf libdeconv.so deconv.o deconv.pyc
