@@ -62,10 +62,6 @@ def fs_in_out(input, output):
 
 if __name__=='__main__':
     inlist, outlist=fs_in_out(input, output) 
-    print 'inlist'
-    print inlist
-    print 'outlist'
-    print outlist
 
     inlist[2], inlist[3]=inlist[3], inlist[2]
     outlist[2], outlist[3]=outlist[3],outlist[2]
@@ -75,7 +71,7 @@ if __name__=='__main__':
 
     reg=Deconvolution('rl')
     #iters=[100, 150, 200, 250]
-    iters=[10]
+    iters=[5]
     for iter in iters:
         #reg.prepare("/home/jph/test/PSF_2d.tif", iter)
         #reg.prepare("/home/jph/graduate_test/Version/Spark/fs_2d/PSF_50.tif", iter)

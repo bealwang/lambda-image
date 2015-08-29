@@ -62,10 +62,6 @@ def fs_in_out(input, output):
 
 if __name__=='__main__':
     inlist, outlist=fs_in_out(input, output) 
-    print 'inlist'
-    print inlist
-    print 'outlist'
-    print outlist
 
     inlist[2], inlist[3]=inlist[3], inlist[2]
     outlist[2], outlist[3]=outlist[3],outlist[2]

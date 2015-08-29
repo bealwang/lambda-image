@@ -6,7 +6,7 @@ C_OBJS := $(patsubst %.cpp, %.o, $(C_SOURCES))
 
 $(BIN): $(C_OBJS) deconv.o Fourier.cu_o
 	#gcc  -lstdc++ -shared -Wl,-soname,libdeconv.so -O2 -o $(BIN) Fourier.cu_o deconv.o $(C_OBJS) -L../tiff -ltiff  -L/usr/local/cuda-6.5/lib64 -lcudart -lcufft -lm
-	gcc  -lstdc++ -shared -Wl,-soname,libdeconv.so -O2 -o $(BIN) Fourier.cu_o deconv.o $(C_OBJS) -L../tiff -ltiff -L/home/jph/opt/fftw/ -lfftw3f -lpthread -lfftw3f_threads -lm -L/usr/local/cuda-6.5/lib64 -lcudart -lcufft -lm
+	gcc  -lstdc++ -shared -Wl,-soname,libdeconv.so -O2 -o $(BIN) Fourier.cu_o deconv.o $(C_OBJS) -L../tiff -ltiff -L/home/wb/opt/fftw/ -lfftw3f -lpthread -lfftw3f_threads -lm -L/usr/local/cuda-6.5/lib64 -lcudart -lcufft -lm
 	cp libdeconv.so ..
 
 

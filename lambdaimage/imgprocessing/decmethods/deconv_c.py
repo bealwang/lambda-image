@@ -5,7 +5,7 @@ from ctypes import c_int
 array_2d_float=npct.ndpointer(dtype=np.float32, ndim=2, flags='CONTIGUOUS')
 array_3d_float=npct.ndpointer(dtype=np.float32, ndim=3, flags='CONTIGUOUS')
 
-libcd=npct.load_library("libdeconv.so", "/home/wb/lambdaimage/lambdaimage/imgprocessing/decmethods/libdeconv.so")
+libcd=npct.load_library("libdeconv.so", "/home/wb/lambdaimage/lambdaimage/imgprocessing/decmethods/RL/libdeconv.so")
 
 def deconv_func(image, psf, iter):
 

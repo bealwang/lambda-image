@@ -5,7 +5,7 @@ C_SOURCES := Image.cpp Signal.cpp ToolboxFourier.cpp ToolboxSignal.cpp Richardso
 C_OBJS := $(patsubst %.cpp, %.o, $(C_SOURCES))
 
 $(BIN): $(C_OBJS) deconv.o
-	gcc  -lstdc++ -shared -Wl,-soname,libdeconv.so -O2 -o $(BIN) deconv.o $(C_OBJS) -L../tiff -ltiff -L/home/jph/opt/fftw/lib -lfftw3f -lpthread -lfftw3f_threads -lm
+	gcc  -lstdc++ -shared -Wl,-soname,libdeconv.so -O2 -o $(BIN) deconv.o $(C_OBJS) -L../tiff -ltiff -L/home/wb/opt/fftw/lib -lfftw3f -lpthread -lfftw3f_threads -lm
 	cp libdeconv.so ..
 
 
