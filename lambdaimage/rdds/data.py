@@ -436,6 +436,10 @@ class Data(object):
             rdd = self.rdd
         return asarray(rdd.keys().collect())
 
+    def zip(self, rddB):
+        newrdd = self.values().zip(rddB.values())
+        return self._constructor(newrdd)
+
     def sortByKey(self):
         """
         Sort records by keys.

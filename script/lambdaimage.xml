@@ -1,13 +1,50 @@
 <?xml version="1.0"?>
 <lambdaimage>
-    <package pname="reg">
-        <function fname="c_powell">
-            <param>4</param>
+    <package pname="prep">
+        <function fname="intensity_normalization">
             <param>8</param>
+        </function>
+    </package>
+    <package pname="prep">
+        <function fname="flip">
+        </function>
+    </package>
+    <package pname="reg">
+        <function fname="mutual_information">
+            <param>4</param>
         </function>
     </package>
     <package pname="fus">
         <function fname="wavelet_fusion">
+        </function>
+    </package>
+    <package pname="prep">
+        <function fname="subtract_Background">
+        </function>
+    </package>
+    <package pname="prep">
+        <function fname="intensity_normalization">
+        </function>
+    </package>
+    <package pname="seg">
+        <function fname="peak_filter">
+            <param>140</param>
+        </function>
+    </package>
+    <package pname="prep">
+        <function fname="smooth">
+            <param>2</param>
+        </function>
+    </package>
+    <package pname="seg">
+        <function fname="watershed">
+            <param>7</param>
+        </function>
+    </package>
+    <package pname="seg">
+        <function fname="fusion">
+            <param>10</param>
+            <param>30</param>
         </function>
     </package>
 
