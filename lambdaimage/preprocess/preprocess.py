@@ -1,6 +1,6 @@
 ################################
 # Author   : septicmk
-# Date     : 2015/07/23 18:14:26
+# Date     : 2015/09/05 16:55:15
 # FileName : preprocess.py
 ################################
 
@@ -28,33 +28,16 @@ def stripe_removal(rdd):
     return rdd.applyValues(func)
 
 def intensity_normalization(rdd, dtype=None):
-    '''
-    Usage:
-     - adjust the intensity
-    args:
-     - num: if you wanna 16-bit output, just let num = 16,  
-    '''
-    def func8(frame):
-        max_intensity = max(frame.flatten())
-        min_intensity = min(frame.flatten())
-        return np.array(map(lambda x: ((x-min_intensity+.0)/(max_intensity - min_intensity))*255, frame)).astype(np.uint8)
-    def func16(frame):
-        max_intensity = max(frame.flatten())
-        min_intensity = min(frame.flatten())
-        return np.array(map(lambda x: ((x-min_intensity+.0)/(max_intensity - min_intensity))*65535, frame)).astype(np.uint16)
-    def funca(frame):
-        max_intensity = max(frame.flatten())
-        min_intensity = min(frame.flatten())
-        if frame.dtype == np.uint8:
-            return np.array(map(lambda x: ((x-min_intensity+.0)/(max_intensity - min_intensity))*255, frame)).astype(np.uint8)
-        else:
-            return np.array(map(lambda x: ((x-min_intensity+.0)/(max_intensity - min_intensity))*65535, frame)).astype(np.uint16)
-    if dtype == 8:
-        return rdd.applyValues(func8)
-    elif dtype == 16:
-        return rdd.applyValues(func16)
-    else:
-        return rdd.applyValues(funca)
+    from lambdaimage.udf._intensity import normalization
+    def func(frame):
+        return normalization(frame, dtype)
+    return rdd.applyValues(func)
+
+def saturation(rdd, precent):
+    from lambdaimage.udf._intensity import saturation
+    def func(frame):
+        return saturation(frame, precent)
+    return rdd.applyValues(func)
 
 def flip(rdd):
     def func(frame):
@@ -64,11 +47,11 @@ def flip(rdd):
 def invert(rdd):
     def func(frame):
         if frame.dtype == np.uint8:
-            return map(lambda p: 255-p, frame)
+            return np.array(map(lambda p: 255-p, frame))
         elif frame.dtype == np.uint16:
-            return map(lambda p: 65535-p, frame)
+            return np.array(map(lambda p: 65535-p, frame))
         else :
-            return map(lambda p: p, frame)
+            return np.array(map(lambda p: p, frame))
     return rdd.applyValues(func)
 
 def black_tophat(rdd, size=15):
@@ -95,7 +78,6 @@ def subtract_Background(rdd, size=12):
     def func(frame):
         return subtract_Background(frame, size)
     return rdd.applyValues(func)
-    #return rdd.map(func)
 
 def shrink(rdd, shrink_size=2):
     def func(frame):
@@ -129,6 +111,35 @@ def smooth(rdd, smooth_size):
         return smoothed
     return rdd.applyValues(func)
 
+@exeTime
+def blockshaped_all(img_stack, nrows, ncols):
+    def blockshaped(arr, nrows, ncols):
+        h, w = arr.shape
+        return (arr.reshape(h//nrows, nrows, -1, ncols)
+                   .swapaxes(1,2)
+                   .reshape(-1, nrows, ncols))
+    arr_list = []
+    for x in img_stack:
+        for frame in blockshaped(x, nrows, ncols):
+            arr_list.append(frame)
+    return np.array(arr_list)
+
+@exeTime
+def recovershape_all(img_stack, nrows, ncols):
+    def recovershape(arr_list, nrows, ncols):
+        y = []
+        for i in range(nrows):
+            x = []
+            for j in range(ncols):
+                x.append(arr_list[i*ncols + j])
+            y.append(np.hstack(tuple(x)))
+        return np.vstack(tuple(y))
+    step = nrows*ncols
+    ori = []
+    for i in range(0,img_stack.shape[0],step):
+        arr = img_stack[i:i+step]
+        ori.append(recovershape(arr, nrows, ncols))
+    return np.array(ori)
        
 if __name__ == '__main__':
     print 'OK'

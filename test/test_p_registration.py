@@ -50,7 +50,7 @@ class TestParalleledRegistration(PySparkTestRegistrationCase):
 
     def test_mutual_information(self):
         rdd = self.tsc.loadImagesFromArray(self.L_imgs)
-        ret = mutual_information(rdd, 0, self.vec0, self.imgA, self.imgB).collectValuesAsArray()
+        ret = mutual_information(rdd)(self.imgA, self.imgB).collectValuesAsArray()
         ret = np.array(ret)
         assert (ret.shape == self.shape)
         assert (ret.dtype == self.dtype)

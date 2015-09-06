@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<lambdaimage>
+    <package pname="reg">
+        <function fname="c_powell">
+            <param>4</param>
+            <param>8</param>
+        </function>
+    </package>
+    <package pname="fus">
+        <function fname="wavelet_fusion">
+        </function>
+    </package>
+
+</lambdaimage>

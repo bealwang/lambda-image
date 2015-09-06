@@ -30,6 +30,7 @@ import os
 import urllib
 import urlparse
 import logging
+import sys
 
 from lambdaimage.utils.aws import AWSCredentials, S3ConnectionWithAnon
 
@@ -121,6 +122,21 @@ def _localRead(filePath, startOffset=None, size=-1):
         else:
             raise
     return buf
+
+class HdfsParallelReader(object):
+    '''
+    parallel reader for hdfs files.
+    '''
+    def __init__(self, sparkContext, **kwargs):
+        #kwargs allows AWS credentials to be passed into generic Readers w/o exceptions being raised.
+        #in this case kwargs are just ignored.
+        self.sc = sparkContext
+        self.lastNRecs = None
+
+    def read(self, dataPath, ext=None, startIdx=None, stopIdx=None, recursive=False, npartitions=None):
+        print dataPath
+        sys.stdout.flush()
+        return self.sc.binaryFiles(dataPath,8).map(lambda(k, v):(k,bytearray(v)))
 
 
 class LocalFSParallelReader(object):
@@ -542,7 +558,6 @@ class BotoFileReader(_BotoClient):
         storageScheme, key = self.__getSingleMatchingKey(dataPath, filename=filename)
         return BotoReadFileHandle(storageScheme, key)
 
-
 class BotoReadFileHandle(object):
     """Read-only file handle-like object exposing a subset of file methods.
 
@@ -611,7 +626,7 @@ SCHEMAS_TO_PARALLELREADERS = {
     'gs': BotoParallelReader,
     's3': BotoParallelReader,
     's3n': BotoParallelReader,
-    'hdfs': None,
+    'hdfs': HdfsParallelReader,
     'http': None,
     'https': None,
     'ftp': None

@@ -10,11 +10,14 @@ from lambdaimage import fusion as fus
 from pyspark import SparkContext, SparkConf
 from lambdaimage import lambdaimageContext
 from lambdaimage.utils.tool import exeTime, log, showsize
+from parseXML import load_xml_file, get_function
 import numpy as np
 
 conf = SparkConf().setAppName('test').setMaster('local[1]').set('spark.executor.memory','2g').set('spark.driver.maxResultSize','6g').set('spark.driver.memory','8g').set('spark.local.dir','/dev/shm').set('spark.storage.memoryFraction','0.2').set('spark.default.parallelism','10')
 tsc=lambdaimageContext.start(conf=conf)
-    
+
+result = load_xml_file("./lambdaimage.xml")
+
 log('info')('tiff load start...')
 rddA = tsc.loadImages('/home/wb/data/1-L/*.tif', inputFormat='tif-stack')
 rddB = tsc.loadImages('/home/wb/data/1-R/*.tif', inputFormat='tif-stack')
@@ -30,7 +33,8 @@ log('info')('intensity normalization over ...')
 
 log('info')('registration start ...')
 vec0 = [0,0,0,1,1,0,0]
-vec = reg.c_powell(_rddA.get(4), _rddB.get(4), vec0)
+#vec = reg.c_powell(_rddA.get(4), _rddB.get(4), vec0)
+vec = eval(get_function("reg",result))(_rddA.get(4), _rddB.get(4), vec0)
 rddB = reg.execute(rddB, vec)
 log('info')('registration over ...')
 
@@ -39,7 +43,8 @@ L_img_stack = rddA.collectValuesAsArray()
 R_img_stack = rddB.collectValuesAsArray()
 img_stack = zip(L_img_stack, R_img_stack)
 rdd = tsc.loadImagesFromArray(img_stack)
-fused_img = fus.wavelet_fusion(rdd)
+#fused_img = fus.wavelet_fusion(rdd)
+fused_img = eval(get_function("fus", result))(rdd)
 fused_img = tsc.loadImagesFromArray(fused_img)
 log('info')('fusion over ...')
 

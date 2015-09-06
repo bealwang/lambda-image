@@ -28,7 +28,7 @@ def fs_in_out(input, output):
 
 if __name__=='__main__':
     inlist, outlist=fs_in_out(input, output) 
-    
+
     tsc = lambdaimageContext.start(master="spark://blade12:7077",appName="test")
 
     reg=Deconvolution('rl')
@@ -37,7 +37,7 @@ if __name__=='__main__':
         #reg.prepare("/home/jph/test/PSF_2d.tif", iter)
         #reg.prepare("/home/jph/graduate_test/Version/Spark/fs_2d/PSF_50.tif", iter)
         reg.prepare("/home/wb/data/deconv/PSF.tif", iter)
-        
+
         for i in range(len(inlist)):
             try:
                 imIn=tsc.loadImages(inlist[i], inputFormat='tif-stack')

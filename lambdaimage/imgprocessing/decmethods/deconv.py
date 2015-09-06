@@ -5,12 +5,12 @@ class deconvRL(DeconvolutionMethod):
     def __init__(self, *args, **kwargs):
         self.psf=None
         self.iteration=None
-
+    
     def prepare(self, psf, iter):
         from lambdaimage.rdds.fileio.tifffile import imread
         self.psf=imread(psf)
         self.iteration=iter
-
+    
 
 class deconvER(DeconvolutionMethod):
     def __init__(self, *args, **kwargs):

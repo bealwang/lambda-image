@@ -46,6 +46,13 @@ class TestParalleledPreprocess(PySparkTestPreprocessCase):
         assert (ret.shape == self.shape)
         assert (ret.dtype == np.uint16)
     
+    def test_saturation(self):
+        rdd = self.L_imgs
+        ret = saturation(rdd, 0.1).collectValuesAsArray()
+        ret = np.array(ret)
+        assert(ret.shape == self.shape)
+        assert(ret.dtype == self.dtype)
+    
     def test_flip(self):
         rdd = self.L_imgs
         ret = flip(rdd).collectValuesAsArray()

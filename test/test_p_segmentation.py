@@ -11,8 +11,8 @@ import numpy as np
 from nose.tools import assert_equals
 import os
 
-L_pwd = os.path.abspath('.') + '/test_data/L_side/*.tif'
-R_pwd = os.path.abspath('.') + '/test_data/R_side/*.tif'
+L_pwd = os.path.abspath('.') + '/test_data/L_side_8/*.tif'
+R_pwd = os.path.abspath('.') + '/test_data/R_side_8/*.tif'
 
 class PySparkTestSegmentationCase(PySparkTestCase):
     def setUp(self):

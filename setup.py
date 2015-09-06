@@ -40,6 +40,12 @@ if __name__ == '__main__':
         Extension("lambdaimage.udf._moment",
             sources=["lambdaimage/udf/_moment.pyx"],
             inlcude_dirs=[numpy.get_include()]),
+        Extension("lambdaimage.udf._intensity",
+            sources=["lambdaimage/udf/_intensity.pyx"],
+            include_dirs=[numpy.get_include()]),
+        Extension("lambdaimage.udf._phansalkar",
+            sources=["lambdaimage/udf/_phansalkar.pyx", "lambdaimage/udf/_phansalkar_c.c"],
+            include_dirs=[numpy.get_include()]),
     ]
     from Cython.Build import cythonize
     extensions = cythonize(extensions)

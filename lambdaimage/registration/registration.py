@@ -1,6 +1,6 @@
 ################################
 # Author   : septicmk
-# Date     : 2015/07/23 19:20:39
+# Date     : 2015/09/05 16:55:16
 # FileName : registration.py
 ################################
 
@@ -123,17 +123,15 @@ def execute(rdd, vec):
     return rdd.applyValues(func)
 
 
-def mutual_information(rdd, index, vec=None, *args):
+def mutual_information(rdd, vec=None, *args):
     if not vec:
-        return execute(rdd, vec)
+        def wrap(imgA, imgB, ftol=0.1):
+            vec = c_powell(imgA, imgB, [0,0,0,1,1,0,0], ftol)
+            return execute(rdd, vec)
+        return wrap
     else:
-        if len(args) < 2:
-            raise "What the FXCK?"
-        imgA, imgB = args[0], args[1]
-        ftol = 0.1 if len(args) < 3 else args[2]
-        vec = c_powell(imgA, imgB, [0,0,0,1,1,0,0], ftol)
-        return execute(rdd, vec)
-          
+        return execute(rdd, vec) 
+
 def cross_correlation(rdd):
     from skimage.feature import register_translation
     from scipy.ndimage import fourier_shift

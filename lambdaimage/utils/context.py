@@ -1,7 +1,6 @@
 """ Simple wrapper for a Spark Context to provide loading functionality """
 
 import os
-
 from lambdaimage.utils.common import checkParams, handleFormat, raiseErrorIfPathExists
 from lambdaimage.utils.datasets import DataSets
 from lambdaimage.utils.params import Params
