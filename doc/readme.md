@@ -85,3 +85,15 @@
     python mehi_local.python2
 
 ###standalone模式
+- 在每个计算节点安装相应的依赖库，如PIL库.(注意python版本,这里使用的2.7)
+- 将Richardson Lucy编译好的库 fftw库 scp到计算节点，并将路径加入到LD_LIBRARY_PATH
+- 配置计算节点的库函数装载路径    
+  修改  /etc/ld.so.conf 增加/home/yourusername/lib    
+  修改完成后执行命令:ldconfig
+- 将 scp_lib 中的库函数 scp到计算节点（blade13 14 16 17)中的~/lib路径下。
+- 将lambdaimage目录scp到各个计算节点,并且分别安装:    
+  make clean    
+  make    
+  python setup.py install
+
+
