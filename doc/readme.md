@@ -69,7 +69,6 @@ blade12:~/lambdaimage/
 ##执行
 所有的测试数据和最终结果都存放在目录/home/wb/data/中.    
 
-    git clone https://github.com/genialwang/lambda-image ./lambdaimage
     cd lambdaimage
     pip install -r requirements.txt
     python setup.py install
