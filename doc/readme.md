@@ -3,9 +3,9 @@
 blade12:~/lambdaimage/
 ##环境需求
 
-- spark1.3.0
-- hadoop1.0
-- python2.7
+- spark==1.3.0
+- hadoop==1.0
+- python==2.7
 - Cython==0.22.1
 - decorator==3.4.2
 - ipython==3.1.0
@@ -34,13 +34,12 @@ blade12:~/lambdaimage/
 主节点: blade12    
 数据节点: blade13 blade16 blade17
 
-###lambdaimage环境配置
+###python环境配置
 
-- PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/build:/home/wb/lambdaimage:$PATHONPATH
-- LD_LIBRARY_PATH=/home/wb/opt/fftw/lib:$LD_LIBARAY_PATH
-- C_INCLUDE_PATH=/home/wb/opt/fftw/include:$C_INCLUDE_PATH
-- CPLUS_INCLUDE_PATH=/home/wb/opt/fftw/include:$CPLUS_INCLUDE_PATH
-
+    PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/build:/home/wb/lambdaimage:$PATHONPATH
+    LD_LIBRARY_PATH=/home/wb/opt/fftw/lib:$LD_LIBARAY_PATH
+    C_INCLUDE_PATH=/home/wb/opt/fftw/include:$C_INCLUDE_PATH
+    CPLUS_INCLUDE_PATH=/home/wb/opt/fftw/include:$CPLUS_INCLUDE_PATH
 
 ##项目结构
 ###主目录
