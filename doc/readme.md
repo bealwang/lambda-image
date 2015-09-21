@@ -1,4 +1,6 @@
 #lambdaimage文档
+##源码位置
+blade12:~/lambdaimage/
 ##环境需求
 
 - spark1.3.0
@@ -96,4 +98,14 @@
   make    
   python setup.py install
 
+执行之前检查输入文件是否存在,rdd默认collect到主节点之后输出,可以在exportAsTiff函数中传递参数collectToDriver控制.
 
+    cd 到主节点的script目录
+    start-all.sh  启动spark
+    spark-submit mehi_standalone.py --master spark://blade12:7077  --driver-memory 10G --executor-memory 6G
+
+##其他
+- 源码和二维反卷积文档在office/wb/目录下.
+- spark安装参考[这里](http://blog.csdn.net/hxpjava1/article/details/19177913)
+- hadoop安装参考[这里](http://www.cnblogs.com/lanxuezaipiao/p/3525554.html)
+- python多版本共存,pyenv安装参考[这里](http://seisman.info/python-pyenv.html)
