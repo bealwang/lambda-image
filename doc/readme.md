@@ -67,15 +67,21 @@
 
 ##执行
 所有的测试数据和最终结果都存放在目录/home/wb/data/中.    
+
     git clone https://github.com/genialwang/lambda-image ./lambdaimage
     cd lambdaimage
     pip install -r requirements.txt
     python setup.py install
+
 ###local模式
 (1)执行单元测试
+
     cd test
     sh run_tests.sh
+
 (2)执行主程序    
+
     cd script
     python mehi_local.python2
+
 ###standalone模式
