@@ -37,7 +37,7 @@ you can use `make clean` to clean and `make test` to launch nosetest.
 python setup.py install
 ```
 or you can try `python setup.py develop` and `python setup.py develop --uninstall`  
-then you can use `import MEHI`  
+then you can use `import lambda-image`  
 
 ## More Information
 
