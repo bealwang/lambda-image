@@ -1,14 +1,12 @@
-# MEHI
-
-Mouse Embryo Heart Imagery 
+# lambda-image
   
 [![Build Status](https://travis-ci.org/septicmk/MEHI.svg)](https://travis-ci.org/septicmk/MEHI)
 
 ## About
 
-MEHI is a python library for processing large-scale 3D spatial and temporal mouse embryo date. the paralleled version is built on Spark.
+lambda-image is a python library for processing large-scale 3D spatial and temporal mouse embryo date. the paralleled version is built on Spark.
 
-MEHI includes the basic module for image processing, like preprocessing, registration, 2-side fusion, segmentation, tracking. the project contains two implementation, a paralleled version and a serial version. the paralleled version is written against Spark's Python API(Pyspark), making use of scipy, numpy, PuLP and pandas
+lambda-image includes the basic module for image processing, like preprocessing, registration, 2-side fusion, segmentation, tracking. the project contains two implementation, a paralleled version and a serial version. the paralleled version is written against Spark's Python API(Pyspark), making use of scipy, numpy, PuLP and pandas
 
 ## Requirements
 
@@ -43,11 +41,11 @@ then you can use `import MEHI`
 
 ## More Information
 
-### MEHI is broadly organized into:
+### lambda-image is broadly organized into:
 
 - A main class with methods for initialization of Spark and control of the whole workflow.
-- Classes for image processing module,like MEHI\_s\_fusion.
-- Helper components like MEHI\_s\_IO, MEHI\_s\_common
+- Classes for image processing module,like lambda-image\_s\_fusion.
+- Helper components like lambda-image\_s\_IO, lambda-image\_s\_common
 
 ### core API:
 
